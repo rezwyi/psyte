@@ -1,0 +1,34 @@
+post_1:
+  user: user
+  title: first-post
+  published_at: <%= 1.days.ago %>
+  markdown: preface\n<!--more-->\ncontent
+
+post_2:
+  user: user
+  title: second-post
+  published_at: <%= 2.days.ago %>
+  markdown: content
+
+post_3:
+  user: user
+  title: third-post
+  published_at: <%= 1.days.since %>
+  markdown: content
+
+post_4:
+  user: user
+  title: fourth-post
+  published_at: <%= 2.days.ago %>
+  markdown: preface\n<!--more-->\ncontent
+  preface: preface
+  content: content
+
+<% 5.upto(10) do |idx| %>
+post_<%= idx %>:
+  user: user
+  title: post-<%= idx %>
+  published_at: <%= 5.days.ago %>
+  markdown: content
+  content: content
+<% end %>
