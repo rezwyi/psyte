@@ -1,0 +1,78 @@
+ru:
+  logo: '2байта'
+  title: ' | 2байта'
+  welcome: 'Добро пожаловать!'
+  copyright: '© 2011'
+  follow: 'Следуйте за мной на'
+  rss: 'Подпишись на рассылку'
+
+  social:
+    linkedin: 'LinkedIn'
+    github: 'Github'
+    twitter: 'Twitter'
+
+  date:
+    formats:
+      date: '%d/%m/%Y'
+      datetime: '%d/%m/%Y %H:%M:%S'
+      default: '%d %B, %Y'
+
+    month_names: [~, Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь]
+
+    order:
+      - :day
+      - :month
+      - :year
+
+  layouts:
+    application:
+      new: 'Добавить статью'
+      manage: 'Управление'
+      login: 'Вход'
+      logout: 'Выход'
+      posts: 'Статьи'
+      about: 'О блоге...'
+      search: 'Поиск...'
+
+  posts:
+    manage:
+      ident: 'Идент.'
+      title: 'Заголовок'
+      created_at: 'Дата создания'
+      published_at: 'Дата публикации'
+      edit: 'Редактировать'
+      destroy: 'Удалить'
+
+    new:
+      add: 'Добавить'
+      back: 'Назад'
+
+    edit:
+      save: 'Сохранить'
+      back: 'Назад'
+
+    form:
+      title: 'Заголовок'
+      content: 'Содержимое'
+      tags: 'Тэги'
+      publish_date: 'Дата публикации'
+
+    post:
+      read_more: 'Подробнее »'
+
+  sessions:
+    new:
+      login: 'Логин'
+      password: 'Пароль'
+      sign_in: 'Войти'
+      back: 'Назад'
+
+  tags:
+    show:
+      tag_posts: 'Список статей с тэгом'
+      count: 'всего'
+
+  searches:
+    index:
+      search_posts: 'Результат поиска статей по фразе'
+      count: 'всего'
