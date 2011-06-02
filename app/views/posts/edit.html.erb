@@ -1,0 +1,16 @@
+<% content_for :title, @post.title + t(:title) %>
+
+<% content_for :jscript do %>
+  <% javascript_include_tag 'showdown', 'wmd' %>
+<% end %>
+
+<div class="post-form">
+  <%= form_for @post do |form| %>
+    <%= render :partial => 'form', :locals => { :form => form } %>
+    <%= render :partial => 'preview', :locals => { :post => @post } %>
+    <div class="post-form-buttons">
+      <%= form.submit t('.save'), :class => 'button' %>
+      <%= link_to t('.back'), :back %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,7 @@
+<% content_for :title, t('layouts.application.search') + t(:title) %>
+
+<div class="search-posts">
+  <%= t('.search_posts') + ' ' %>"<b><%= params[:query] %></b>" (<%= t('.count') + ' ' + @posts.count.to_s %>)
+</div>
+
+<%= render @posts %>

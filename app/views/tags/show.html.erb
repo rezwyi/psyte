@@ -1,0 +1,7 @@
+<% content_for :title, @tag.name + t(:title) %>
+
+<div class="tag-posts">
+  <%= t('.tag_posts') + ' ' %>"<b><%= @tag.name %></b>" (<%= t('.count') + ' ' + @posts.count.to_s %>)
+</div>
+
+<%= render @posts %>

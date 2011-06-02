@@ -1,0 +1,7 @@
+<% content_for :title, t('layouts.application.posts') + t(:title) %>
+
+<% content_for :pagination do %>
+  <%= render 'pagination' %>
+<% end %>
+
+<%= render @posts %>

@@ -1,0 +1,33 @@
+<% content_for :title, t('layouts.application.manage') + t(:title) %>
+
+<table class="manage-posts">
+  <tbody>
+    <tr class="table-header">
+      <th><%= t('.ident') %></th>
+      <th><%= t('.title') %></th>
+      <th><%= t('.created_at') %></th>
+      <th><%= t('.published_at') %></th>
+    </tr>
+
+    <% t_datetime = t('date.formats.datetime') %>
+    <% t_date = t('date.formats.date') %>
+    <% t_edit = t('.edit') %>
+    <% t_destroy = t('.destroy') %>
+
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.id %></td>
+        <% if post.title.length > 30 %>
+          <td><%= link_to "#{post.title[0,27]}...", post %></td>
+        <% else %>
+          <td><%= link_to post.title, post %></td>
+        <% end %>
+        <td><%= post.created_at.strftime(t_datetime) %></td>
+        <td><%= post.published_at.strftime(t_date) %></td>
+        <td><%= link_to t_edit, edit_post_path(post) %></td>
+        <td><%= button_to t_destroy, post, :method => :delete, :class => 'button' %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>

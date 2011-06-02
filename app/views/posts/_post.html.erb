@@ -1,0 +1,44 @@
+<div id="post-<%= post.id %>" class="post">
+  <h1 class="post-title">
+    <%= link_to post.title, post %>
+  </h1>
+
+  <div class="post-info">
+    <% unless post.user.blank? %>
+      <span class="post-author">
+        <%= post.user.name %>
+      </span>
+    <% end %>
+
+    <span class="post-pubdate">
+      |
+      <%= post.published_at.strftime(t('date.formats.default')) %>
+    </span>
+
+    <% unless post.tags.blank? %>
+        |
+        <% post.tags.each do |tag| %>
+          <%= link_to tag.name, tag, :class => 'tag-link' %>
+        <% end %>
+    <% end %>
+  </div>
+
+  <% unless current_page?(post_path(post)) %>
+    <% unless post.preface.blank? %>
+      <%= content_tag :div, raw(post.preface), :class => 'post-preface post-content' %>
+      <div class="read-more">
+        <%= link_to t('.read_more'), post %>
+      </div>
+    <% else %>
+      <%= content_tag :div, raw(post.content), :class => 'post-preface post-content' %>
+    <% end %>
+  <% else %>
+    <% unless post.preface.blank? %>
+      <%= content_tag :div, raw(post.preface), :class => 'post-preface post-content' %>
+      <%= content_tag :div, raw(post.content), :class => 'post-content' %>
+    <% else %>
+      <%= content_tag :div, raw(post.content), :class => 'post-preface post-content' %>
+    <% end %>
+  <% end %>
+
+</div>
