@@ -44,7 +44,9 @@
 
     </div>
 
-    <div id="content"><%= yield %></div>
+    <div id="content">
+      <div id="content-elements"><%= yield %></div>
+    </div>
 
     <%= content_tag :div, yield(:pagination), :id => 'pagination' unless yield(:pagination).blank? %>
 
