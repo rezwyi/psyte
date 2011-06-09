@@ -1,4 +1,4 @@
-<% content_for :title, t('layouts.application.manage') + t(:title) %>
+<% content_for :title, [t('layouts.application.manage'), t(:title)].join(' - ') %>
 
 <table class="manage-posts">
   <tbody>

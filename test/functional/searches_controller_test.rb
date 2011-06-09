@@ -12,9 +12,9 @@ class SearchesControllerTest < ActionController::TestCase
     assert_template :index
   end
 
-  test 'index view should set title to "search | title"' do
+  test 'index view should set title to "search - title"' do
     get :index, { :query => 'content' }
-    assert_select 'title', t('layouts.application.search') + t(:title)
+    assert_select 'title', [t('layouts.application.search'), t(:title)].join(' - ')
   end
 
 end
