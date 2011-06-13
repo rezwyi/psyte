@@ -30,8 +30,9 @@ ru:
       manage: 'Управление'
       login: 'Вход'
       logout: 'Выход'
-      posts: 'Статьи'
-      about: 'О сайте...'
+      posts: 'Блог'
+      about: 'Обо мне...'
+      mailme: 'Жду писем'
       search: 'Поиск...'
 
   posts:
@@ -59,6 +60,9 @@ ru:
 
     post:
       read_more: 'Подробнее »'
+
+    feed:
+      description: 'Лента сообщений блога'
 
   sessions:
     new:
