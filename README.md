@@ -1,5 +1,5 @@
-# 2byt.es
+# Psyte
 
-Source code of my personal website [2byt.es](http://2byt.es)
+Source code of the engine of my personal website. You can see it here: [rezvanov.info](http://rezvanov.info)
 
 Copyright (c) 2011, Sergey Rezvanov

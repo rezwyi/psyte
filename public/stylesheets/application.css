@@ -46,14 +46,21 @@ textarea, input, select {
 }
 
 #logo {
-  background-color: #655f63;
-  color:#fff;
-  box-shadow: 0 0 2px #655f63;
   font-size: 2em;
   font-weight: bold;
-  border-radius: 0 0 5px 5px;
   float: left;
-  padding: 5px 30px;
+  padding: 15px  0px 0px 0px;
+}
+
+#logo a {
+  color: #655f63;
+}
+
+#logo span {
+  color: #BDAFAC;
+  font-weight: normal;
+  font-size: 0.6em;
+  font-style: italic;
 }
 
 #logo a:hover {
