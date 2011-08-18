@@ -1,4 +1,4 @@
-Twobytes::Application.configure do
+Psyte::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # The production environment is meant for finished, "live" apps.
@@ -46,4 +46,5 @@ Twobytes::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
 end

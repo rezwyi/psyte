@@ -1,4 +1,4 @@
-Twobytes::Application.routes.draw do
+Psyte::Application.routes.draw do
   get 'pages/about'
   get 'searches/index'
 

@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Twobytes::Application.load_tasks
+Psyte::Application.load_tasks
