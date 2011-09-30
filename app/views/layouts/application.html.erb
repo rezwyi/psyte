@@ -1,70 +1,20 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
-<head>
-  <title><%= yield :title %></title>
-  <%= stylesheet_link_tag 'application', 'zenburn' %>
-  <%= javascript_include_tag 'application', 'highlight.pack' %>
-  <%= csrf_meta_tag %>
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="alternate" type="application/rss+xml" href="<%= feed_posts_path %>" />
-  <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-</head>
-<body>
-  <div id="wrapper">
-    <div id="header">
-      <div id="logo">
-        <%= link_to_unless current_page?(root_url), 'Rezvanov<span>.info</span>'.html_safe, root_url %>
+  <%= render :partial => 'shared/head' %>
+  <body>
+    <div id="wrapper">
+      <%= render :partial => 'shared/header' %>
+
+      <div id="content">
+        <div id="content-elements"><%= yield %></div>
       </div>
 
-      <div id="manage-menu">
-        <ul>
-          <% if current_user %>
-            <li><%= link_to_unless current_page?(new_post_path), t('.new') , new_post_path %></li>
-            <li><%= link_to_unless current_page?(manage_posts_path), t('.manage') , manage_posts_path %></li>
-            <li class="last"><%= link_to_unless current_page?(logout_path), t('.logout'), logout_path %></li>
-          <% else %>
-            <li class="last"><%= link_to_unless current_page?(login_path), t('.login'), login_path %></li>
-          <% end %>
-        </ul>
-      </div>
-      
-      <div id="pages-menu">
-        <ul>
-          <li><%= link_to_unless current_page?(root_path), t('.posts'), root_path %></li>
-          <li><%= link_to t('.mailme'), 'mailto:rezwyi@gmail.com' %></li>
-          <li class="last"><%= link_to_unless current_page?(pages_about_path), t('.about'), pages_about_path %></li>
-        </ul>
+      <%= content_tag :div, yield(:pagination),
+                      :id => 'pagination' unless yield(:pagination).blank? %>
 
-        <div id="search">
-          <%= form_tag searches_index_path, :method => :get do %>
-            <%= search_field_tag :query, params[:query], :placeholder => t('.search') %>
-          <% end %>
-        </div>
+      <%= render :partial => 'shared/footer' %>
 
-      </div>
-
+      <%= yield :jscript %>
     </div>
-
-    <div id="content">
-      <div id="content-elements"><%= yield %></div>
-    </div>
-
-    <%= content_tag :div, yield(:pagination), :id => 'pagination' unless yield(:pagination).blank? %>
-
-    <div id="footer">
-      <%= link_to image_tag('http://i.creativecommons.org/l/by-sa/3.0/80x15.png', :alt => 'Creative Commons License'), 'http://creativecommons.org/licenses/by-sa/3.0/'.html_safe, :style => 'border:none', :target => 'blank' %>
-      <span><%= t(:copyright) %>.</span>
-      <span><%= t(:follow) %>:</span>
-
-      <%= link_to t('social.linkedin'), 'http://ru.linkedin.com/pub/sergey-rezvanov/32/b69/974'.html_safe, :target => 'blank' %>
-      <%= link_to t('social.github'), 'http://github.com/rezwyi'.html_safe, :target => 'blank' %>
-      <%= link_to t('social.twitter'), 'http://twitter.com/rezwyi'.html_safe, :target => 'blank' %>
-
-    </div>
-
-  </div>
-
-  <%= yield :jscript %>
-
-</body>
+  </body>
 </html>

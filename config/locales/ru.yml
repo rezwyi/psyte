@@ -5,6 +5,17 @@ ru:
   follow: 'Следуйте за мной на'
   rss: 'Подпишись на рассылку'
 
+  head:
+    title:
+      new: 'Добавить статью'
+      edit: 'Редактирование'
+      manage: 'Управление'
+      login: 'Вход'
+      posts: 'Блог'
+      about: 'Обо мне...'
+      search: 'Поиск...'
+      tag: 'Тег'
+
   social:
     linkedin: 'LinkedIn'
     github: 'Github'
@@ -23,8 +34,8 @@ ru:
       - :month
       - :year
 
-  layouts:
-    application:
+  shared:
+    header:
       new: 'Добавить статью'
       manage: 'Управление'
       login: 'Вход'
@@ -72,7 +83,7 @@ ru:
 
   tags:
     show:
-      tag_posts: 'Список статей с тэгом'
+      tag_posts: 'Список статей с тегом'
       count: 'всего'
 
   searches:

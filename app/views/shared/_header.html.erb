@@ -1,0 +1,45 @@
+<div id="header">
+  <div id="logo">
+    <%= link_to_unless current_page?(root_url), 'Rezvanov<span>.info</span>'.html_safe, root_url %>
+  </div>
+
+  <div id="manage-menu">
+    <ul>
+      <% if current_user %>
+        <li>
+          <%= link_to_unless current_page?(new_post_path), t('.new') , new_post_path %>
+        </li>
+        <li>
+          <%= link_to_unless current_page?(manage_posts_path), t('.manage') , manage_posts_path %>
+        </li>
+        <li class="last">
+          <%= link_to_unless current_page?(logout_path), t('.logout'), logout_path %>
+        </li>
+      <% else %>
+        <li class="last">
+          <%= link_to_unless current_page?(login_path), t('.login'), login_path %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  
+  <div id="pages-menu">
+    <ul>
+      <li>
+        <%= link_to_unless current_page?(root_path), t('.posts'), root_path %>
+      </li>
+      <li>
+        <%= link_to t('.mailme'), 'mailto:rezwyi@gmail.com' %>
+      </li>
+      <li class="last">
+        <%= link_to_unless current_page?(pages_about_path), t('.about'), pages_about_path %>
+      </li>
+    </ul>
+
+    <div id="search">
+      <%= form_tag searches_index_path, :method => :get do %>
+        <%= search_field_tag :query, params[:query], :placeholder => t('.search') %>
+      <% end %>
+    </div>
+  </div>
+</div>
