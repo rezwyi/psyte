@@ -40,7 +40,7 @@ class SessionsControllerTest < ActionController::TestCase
 
   test 'new view should set title to "login - title"' do
     get :new
-    assert_select 'title', [t('layouts.application.login'), t(:title)].join(' - ')
+    assert_select 'title', [t('head.title.login'), t(:title)].join(' - ')
   end
 
 end

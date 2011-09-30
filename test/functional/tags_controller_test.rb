@@ -24,7 +24,7 @@ class TagsControllerTest < ActionController::TestCase
 
   test 'show view should set title to "title - tag name"' do
     get :show, :id => @tag_1.id
-    assert_select 'title', [@tag_1.name, t(:title)].join(' - ')
+    assert_select 'title', ["#{t('head.title.tag')} '#{@tag_1.name}'", t(:title)].join(' - ')
   end
 
 end

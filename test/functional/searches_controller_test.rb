@@ -14,7 +14,7 @@ class SearchesControllerTest < ActionController::TestCase
 
   test 'index view should set title to "search - title"' do
     get :index, { :query => 'content' }
-    assert_select 'title', [t('layouts.application.search'), t(:title)].join(' - ')
+    assert_select 'title', [t('head.title.search'), t(:title)].join(' - ')
   end
 
 end

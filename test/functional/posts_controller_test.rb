@@ -125,30 +125,30 @@ class PostsControllerTest < ActionController::TestCase
 
   test 'index view should set title to "description - title"' do
     get :index
-    assert_select 'title',  [t('layouts.application.posts'), t(:title)].join(' - ')
+    assert_select 'title',  ["#{t('head.title.posts')}", t(:title)].join(' - ')
   end
 
   test 'new view should set title to "new - title"' do
     login_as :user
     get :new
-    assert_select 'title', [t('layouts.application.new'), t(:title)].join(' - ')
+    assert_select 'title', ["#{t('head.title.new')}", t(:title)].join(' - ')
   end
 
   test 'manage view should set title to "manage - title"' do
     login_as :user
     get :manage
-    assert_select 'title', [t('layouts.application.manage'), t(:title)].join(' - ')
+    assert_select 'title', ["#{t('head.title.manage')}", t(:title)].join(' - ')
   end
 
   test 'show view should set title to "post title - title"' do
     get :show, :id => @post_1.id
-    assert_select 'title', [@post_1.title, t(:title)].join(' - ')
+    assert_select 'title', ["'#{@post_1.title}'", t(:title)].join(' - ')
   end
 
   test 'edit view should set title to "post title - title"' do
     login_as :user
     get :edit, :id => @post_1.id
-    assert_select 'title', [@post_1.title, t(:title)].join(' - ')
+    assert_select 'title', ["#{t('head.title.edit')} '#{@post_1.title}'", t(:title)].join(' - ')
   end
 
   test 'index view should show only :per_page posts' do
