@@ -94,6 +94,10 @@ textarea, input, select {
   display: inline;
   list-style-type: none;
   margin: 0;
+  padding: 1px 6px 0 10px;
+}
+
+#manage-menu li.first {
   padding: 1px 6px 0 4px;
 }
 
@@ -125,6 +129,10 @@ textarea, input, select {
   font-size: 0.7em;
   font-weight: bold;
   margin: 0;
+  padding: 1px 12px 0 14px;
+}
+
+#pages-menu li.first {
   padding: 1px 12px 0 4px;
 }
 
@@ -273,13 +281,17 @@ h1.post-title {
 
 .read-more {
   text-align: right;
-  margin: 20px 0 0 0;
+  margin: 20px 0 70px 0;
 }
 
 .read-more a {
   color: #655f63;
   font-size: 0.6em; 
   font-weight: bold;
+}
+
+.post-preface {
+  min-height: 180px;
 }
 
 .post-preface p:first-child img:first-child {
