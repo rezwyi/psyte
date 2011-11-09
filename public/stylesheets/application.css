@@ -1,7 +1,7 @@
 /* Color palette from http://www.colourlovers.com/palette/1533081/grey */
 body {
   background-color: #f6f2ef;
-  font-family:  Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 1.3em;
   color: #655f63;
 }
@@ -21,6 +21,11 @@ textarea, input, select {
 * {
   margin: 0;
   padding: 0;
+}
+
+.clear {
+  display: block;
+  height: 15px;
 }
 
 #wrapper {
@@ -308,7 +313,7 @@ h1.post-title {
   margin: 30px 0 30px 30px;
 }
 
-.post-content a, #wmd-preview a, #footer a  {
+.post-content a, .post-comments a, #wmd-preview a, #footer a, #disqus_thread a {
   color: #655fc8;
   font-weight: bold;
   border-bottom: 1px dotted;
@@ -445,4 +450,9 @@ h1.post-title {
 
 .field_with_errors input, .field_with_errors textarea {
   box-shadow: 0 0 2px red;
+}
+
+#disqus_thread {
+  border-top: 1px dashed;
+  margin: 30px 0px 0px 0px;
 }

@@ -6,15 +6,21 @@
       <%= render :partial => 'shared/header' %>
 
       <div id="content">
-        <div id="content-elements"><%= yield %></div>
+        <div id="content-elements">
+          <%= yield %>
+
+          <% unless yield(:comments).blank? %>
+            <div id="comments"><%= yield :comments %></div>
+          <% end %>
+        </div>
+
       </div>
 
-      <%= content_tag :div, yield(:pagination),
-                      :id => 'pagination' unless yield(:pagination).blank? %>
+      <% unless yield(:pagination).blank? %>
+        <div id="pagination"><%= yield :pagination %></div>
+      <% end %>
 
       <%= render :partial => 'shared/footer' %>
-
-      <%= yield :jscript %>
     </div>
   </body>
 </html>

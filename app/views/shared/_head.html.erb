@@ -1,9 +1,14 @@
 <head>
   <title><%= yield :title %></title>
+
   <%= stylesheet_link_tag 'application', 'zenburn' %>
   <%= javascript_include_tag 'application', 'highlight.pack' %>
   <%= csrf_meta_tag %>
+
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="alternate" type="application/rss+xml" href="<%= feed_posts_path %>" />
   <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+
+  <%= yield :javascripts %>
+  <%= yield :stylesheets %>
 </head>
