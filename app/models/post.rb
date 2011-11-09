@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  Separator = '<!--more-->'
+  SEPARATOR = '<!--more-->'
 
   cattr_reader :per_page
   @@per_page = 7
@@ -8,7 +8,10 @@ class Post < ActiveRecord::Base
   has_many :taggings, :dependent => :destroy
   has_many :tags, :through => :taggings
 
+  has_friendly_id :ascii_title, :use_slug => true
+
   validates_presence_of :user_id, :title, :published_at, :markdown
+  validates_uniqueness_of :title
 
   before_save :save_html
 
@@ -24,10 +27,20 @@ class Post < ActiveRecord::Base
     tag_names += ' ' unless tag_names.blank?
   end
 
+  protected
+
+  def ascii_title
+    arr = []
+    self.title.split(' ').each do |word|
+      arr << Russian::translit(word.downcase)
+    end
+    arr.join('-')
+  end
+
   private
 
   def save_html
-    if self.markdown =~ /(?<preface>.*)#{Separator}(?<content>.*)/im
+    if self.markdown =~ /(?<preface>.*)#{SEPARATOR}(?<content>.*)/im
       self.preface = RDiscount.new($~[:preface], :filter_html).to_html
       self.content = RDiscount.new($~[:content], :filter_html).to_html
     else
