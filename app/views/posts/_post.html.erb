@@ -2,16 +2,18 @@
   <%= content_tag :div, nil, :id => 'disqus_thread' if current_page?(post_path(post)) %>
 <% end %>
 
-<% content_for :javascripts do %>
-  <script type="text/javascript">
-    var disqus_shortname = 'rezvanovinfo';
+<% if current_page?(post_path(post)) %>
+  <% content_for :javascripts do %>
+    <script type="text/javascript">
+      var disqus_shortname = 'rezvanovinfo';
 
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  <% end %>
 <% end %>
 
 <div id="post-<%= post.id %>" class="post">
