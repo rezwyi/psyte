@@ -1,6 +1,5 @@
 /* Color palette from http://www.colourlovers.com/palette/1533081/grey */
 body {
-  background-color: #f6f2ef;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1.3em;
   color: #655f63;
@@ -40,7 +39,6 @@ textarea, input, select {
 
 #content {
   background: #fff;
-  border: 1px solid #bdafac;
   box-shadow: 0 0 2px;
   border-radius: 5px;
   width: 898px;
@@ -453,6 +451,6 @@ h1.post-title {
 }
 
 #disqus_thread {
-  border-top: 1px dashed;
+  border-top: 1px dashed #bdafac;
   margin: 30px 0px 0px 0px;
 }
