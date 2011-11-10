@@ -39,7 +39,6 @@ textarea, input, select {
 
 #content {
   background: #fff;
-  box-shadow: 0 0 2px;
   border-radius: 5px;
   width: 898px;
 }
@@ -81,7 +80,6 @@ textarea, input, select {
 #manage-menu {
   background-color: #655f63;
   border-radius: 0px 0px 5px 5px;
-  box-shadow: 0 0 2px;
   font-size: 0.5em;
   float: right;
   padding: 5px 8px;
@@ -111,7 +109,6 @@ textarea, input, select {
 #pages-menu {
   background: #655f63;
   border-radius: 5px;
-  box-shadow: 0 0 2px;
   float: left;
   clear: both;
   width: 890px;
@@ -447,7 +444,7 @@ h1.post-title {
 }
 
 .field_with_errors input, .field_with_errors textarea {
-  box-shadow: 0 0 2px red;
+  border: 1px solid red;
 }
 
 #disqus_thread {
