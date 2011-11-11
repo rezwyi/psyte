@@ -285,9 +285,18 @@ h1.post-title {
 }
 
 .read-more a {
-  color: #655f63;
   font-size: 0.6em; 
   font-weight: bold;
+  color:#fff;
+  background-color: #bdafac;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.read-more a:hover {
+  background-color: #726d74;
+  text-decoration: none;
 }
 
 .post-preface {
