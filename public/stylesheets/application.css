@@ -18,6 +18,14 @@ textarea, input, select {
   font-family: inherit;
 }
 
+blockquote {
+  font-style: italic;
+  font-weight: bold;
+  border-left: 1px solid;
+  margin: 30px 30px 30px 30px;
+  padding: 15px 15px 25px 15px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -214,6 +222,7 @@ textarea, input, select {
 }
 
 #footer {
+  clear: both;
   height: 30px;
   font-size: 0.6em;
   margin: 60px 0 30px 0;
@@ -557,7 +566,7 @@ textarea, input, select {
 
 .recently-items ol {
   width: 300px;
-  margin: 0 0 0 50px;
+  margin: 0 0 60px 50px;
 }
 
 .recently-items ol li.last {
