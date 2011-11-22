@@ -1,0 +1,12 @@
+<% content_for :title, [t('head.title.new_project'), t(:title)].join(' - ') %>
+
+<div class="form">
+  <%= form_for @project do |form| %>
+    <%= render :partial => 'form', :locals => { :form => form } %>
+
+    <div class="form-buttons">
+      <%= form.submit t('common.add'), :class => 'button' %>
+      <%= link_to t('common.back'), :back %>
+    </div>
+  <% end %>
+</div>  
