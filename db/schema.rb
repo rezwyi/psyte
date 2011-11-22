@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(:version => 20111109093033) do
     t.datetime "updated_at"
   end
 
+  create_table "projects", :force => true do |t|
+    t.string   "title",          :null => false
+    t.string   "image_url",      :null => false
+    t.string   "production_url"
+    t.string   "source_url"
+    t.text     "description",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "slugs", :force => true do |t|
     t.string   "name"
     t.integer  "sluggable_id"
