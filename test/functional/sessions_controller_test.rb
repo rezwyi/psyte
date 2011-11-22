@@ -37,10 +37,4 @@ class SessionsControllerTest < ActionController::TestCase
     assert_nil session[:user_id]
     assert_redirected_to root_path
   end
-
-  test 'new view should set title to "login - title"' do
-    get :new
-    assert_select 'title', [t('head.title.login'), t(:title)].join(' - ')
-  end
-
 end

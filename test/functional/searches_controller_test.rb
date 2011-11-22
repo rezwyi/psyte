@@ -11,10 +11,4 @@ class SearchesControllerTest < ActionController::TestCase
     assert_not_nil assigns(:posts)
     assert_template :index
   end
-
-  test 'index view should set title to "search - title"' do
-    get :index, { :query => 'content' }
-    assert_select 'title', [t('head.title.search'), t(:title)].join(' - ')
-  end
-
 end

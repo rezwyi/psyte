@@ -2,6 +2,8 @@ require 'test_helper'
 
 class PostsControllerTest < ActionController::TestCase
   def setup
+    request.env['HTTP_REFERER'] = '/'
+
     @post_1 = posts(:post_1)
     @per_page = 7
   end
@@ -9,11 +11,6 @@ class PostsControllerTest < ActionController::TestCase
   def teardown
     @post_1 = nil
   end
-
-  def login_as(name)
-    user = User.find_by_name(name)
-    session[:user_id] = user.id
-  end 
 
   test 'index action should render index template' do
     get :index
@@ -60,11 +57,6 @@ class PostsControllerTest < ActionController::TestCase
     assert_redirected_to root_path
   end
 
-  test 'if user not logged in manage action redirects to root' do
-    get :manage
-    assert_redirected_to root_path
-  end
-
   test 'if user logged in new action should get new form' do
     login_as :user
     get :new
@@ -89,7 +81,7 @@ class PostsControllerTest < ActionController::TestCase
     assert_template :new
   end
 
-  test 'if user logged in edit action  should get edit form' do
+  test 'if user logged in edit action should get edit form' do
     login_as :user
     get :edit, :id => @post_1.id
     assert_not_nil assigns(:post)
@@ -113,42 +105,7 @@ class PostsControllerTest < ActionController::TestCase
     assert_difference 'Post.count', -1 do
       delete :destroy, :id => @post_1.id
     end
-    assert_redirected_to manage_posts_path
-  end
-
-  test 'if user logged in manage action should render manage template' do
-    login_as :user
-    get :manage
-    assert_not_nil assigns(:posts)
-    assert_template :manage
-  end
-
-  test 'index view should set title to "description - title"' do
-    get :index
-    assert_select 'title',  ["#{t('head.title.posts')}", t(:title)].join(' - ')
-  end
-
-  test 'new view should set title to "new - title"' do
-    login_as :user
-    get :new
-    assert_select 'title', ["#{t('head.title.new')}", t(:title)].join(' - ')
-  end
-
-  test 'manage view should set title to "manage - title"' do
-    login_as :user
-    get :manage
-    assert_select 'title', ["#{t('head.title.manage')}", t(:title)].join(' - ')
-  end
-
-  test 'show view should set title to "post title - title"' do
-    get :show, :id => @post_1.id
-    assert_select 'title', ["'#{@post_1.title}'", t(:title)].join(' - ')
-  end
-
-  test 'edit view should set title to "post title - title"' do
-    login_as :user
-    get :edit, :id => @post_1.id
-    assert_select 'title', ["#{t('head.title.edit')} '#{@post_1.title}'", t(:title)].join(' - ')
+    assert_redirected_to root_path
   end
 
   test 'index view should show only :per_page posts' do

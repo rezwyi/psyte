@@ -21,10 +21,4 @@ class TagsControllerTest < ActionController::TestCase
     assert_equal 'application/rss+xml; charset=utf-8', response.headers['Content-Type']
     assert_template :feed
   end
-
-  test 'show view should set title to "title - tag name"' do
-    get :show, :id => @tag_1.id
-    assert_select 'title', ["#{t('head.title.tag')} '#{@tag_1.name}'", t(:title)].join(' - ')
-  end
-
 end

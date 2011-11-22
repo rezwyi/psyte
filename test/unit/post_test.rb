@@ -4,13 +4,11 @@ class PostTest < ActiveSupport::TestCase
   def setup
     @post_1 = posts(:post_1)
     @post_2 = posts(:post_2)
-    @post_3 = posts(:post_3)
   end
 
   def teardown
     @post_1 = nil
     @post_2 = nil
-    @post_3 = nil
   end
 
   test 'should not be valid without title' do
@@ -38,7 +36,7 @@ class PostTest < ActiveSupport::TestCase
     assert !@post_2.preface && @post_2.content
   end
 
-  test 'published scope should return only the published posts' do
+  test 'published scope should return only published posts' do
     only_published = true
     Post.published.each do |post|
       only_published &&= (post.published_at <= Time.now.utc)
@@ -46,4 +44,7 @@ class PostTest < ActiveSupport::TestCase
     assert only_published
   end
 
+  test 'recent scope should return only 5 last posts' do
+    assert Post.recent.length == 5
+  end
 end
