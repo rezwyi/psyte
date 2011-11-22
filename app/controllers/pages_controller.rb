@@ -1,5 +1,12 @@
 class PagesController < ApplicationController
-  def about
-    render :layout => true, :file => "/static/about-#{I18n.locale}.html"
+  before_filter :login_required, :only => [ :manage ]
+
+  def home
+    @posts = Post.recent
+    @projects = Project.recent
+  end
+  
+  def manage
+    @items = params[:i] == 'projects' ? Project.managed : Post.managed
   end
 end

@@ -1,7 +1,7 @@
-<% content_for :title, [t('head.title.search'), t(:title)].join(' - ') %>
+<% content_for :title, [t('common.search'), t(:title)].join(' - ') %>
 
 <div class="search-posts">
-  <%= t('.search_posts') + ' ' %>"<b><%= params[:query] %></b>" (<%= t('.count') + ' ' + @posts.count.to_s %>)
+  <%= t('.search_posts') + ' ' %>"<b><%= params[:query] %></b>" (<%= t('common.count') + ' ' + @posts.count.to_s %>)
 </div>
 
 <%= render @posts %>

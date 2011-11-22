@@ -1,19 +1,20 @@
 Psyte::Application.routes.draw do
-  get 'pages/about'
   get 'searches/index'
 
   match 'login', :to => 'sessions#new'
   match 'logout', :to => 'sessions#destroy'
+  match 'manage', :to => 'pages#manage'
 
   resources :sessions
   resources :posts do
-    get 'manage', :on => :collection
     get 'feed', :on => :collection, :format => :rss
   end
-  resources :tags, :only => [:show] do
+  resources :tags, :only => [ :show ] do
     get 'feed', :on => :member, :format => :rss
   end
+  resources :projects do
+    get 'feed', :on => :collection, :format => :rss
+  end
 
-  root :to => 'posts#index'
-
+  root :to => 'pages#home'
 end

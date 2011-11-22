@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :login_required, :only => [:new, :create, :edit, :update, :destroy, :manage]
+  before_filter :login_required, :only => [ :new, :create, :edit, :update, :destroy ]
 
   def index
     @posts = Post.published.paginate(:page => params[:page], :per_page => Post.per_page)
@@ -41,15 +41,10 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id]).destroy
-    redirect_to manage_posts_path
-  end
-
-  def manage
-    @posts = Post.managed
+    redirect_to :back
   end
 
   def feed
     @posts = Post.published
   end
-
 end

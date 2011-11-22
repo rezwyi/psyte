@@ -1,16 +1,16 @@
-<% content_for :title, [t('head.title.new'), t(:title)].join(' - ') %>
+<% content_for :title, [t('head.title.new_post'), t(:title)].join(' - ') %>
 
 <% content_for :javascripts do %>
   <% javascript_include_tag 'showdown', 'wmd' %>
 <% end %>
 
-<div class="post-form">
+<div class="form">
   <%= form_for @post do |form| %>
     <%= render :partial => 'form', :locals => { :form => form } %>
     <%= render :partial => 'preview', :locals => { :post => @post } %>
-    <div class="post-form-buttons">
-      <%= form.submit t('.add'), :class => 'button' %>
-      <%= link_to t('.back'), :back %>
+    <div class="form-buttons">
+      <%= form.submit t('common.add'), :class => 'button' %>
+      <%= link_to t('common.back'), :back %>
     </div>
   <% end %>
 </div>  

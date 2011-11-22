@@ -17,9 +17,7 @@
 <% end %>
 
 <div id="post-<%= post.id %>" class="post">
-  <h1 class="post-title">
-    <%= link_to post.title, post %>
-  </h1>
+  <h1><%= link_to post.title, post %></h1>
 
   <div class="post-info">
     <span class="post-pubdate">
@@ -53,5 +51,4 @@
       <%= content_tag :div, raw(post.content), :class => 'post-preface post-content' %>
     <% end %>
   <% end %>
-
 </div>

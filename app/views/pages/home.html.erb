@@ -1,0 +1,41 @@
+<% content_for :title, [t(:welcome), t(:title)].join(' - ') %>
+
+<div class="about">
+  <div class="avatar">
+    <img src="/images/avatar.png" />
+  </div>
+
+  <div class="about-info">
+    <p>Вы посетили мой персональный веб-сайт. Я - Сергей Резванов, программист из России.</p>
+    <p>В настоящий момент я работаю в компании <a href="http://compassplus.com" target="blank">Compass Plus</a>, на должности программиста-аналитика. Основным инструментом в моей работе является СУБД Oracle со своими технологиями. Специализируюсь на разработке банковского программного обеспечения.</p>
+    <p>В остальное время пишу статьи и занимаюсь разработкой веб-приложений. Очень люблю язык Ruby, а каркасом для веб-программирования я выбрал популярный Ruby On Rails.</p>
+    <p>Ну и традиционно... Все материалы данного сайта (если это не указано в них явно) распространяются по лицензии <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons</a>. При их использовании в личных целях ссылка на источник обязательна.</p>
+    <br />
+    <p>С уважением, Сергей.</p>
+    <br />
+  </div>
+</div>
+
+<div class="activity">
+  <div class="recently-items left">
+    <h3><%= t('.recently_posts') %></h3>
+
+    <ol>
+      <% @posts.each do |post| %>
+        <li><%= link_to post.title, post %></li>
+      <% end %>
+      <li class="last"><%= link_to t('.show_all'), posts_path %></li>
+    </ol>
+  </div>
+
+  <div class="recently-items right">
+    <h3><%= t('.recently_projects') %></h3>
+
+    <ol>
+      <% @projects.each do |project| %>
+        <li><%= link_to project.title, project %></li>
+      <% end %>
+      <li class="last"><%= link_to t('.show_all'), projects_path %></li>
+    </ol>
+  </div>
+</div>

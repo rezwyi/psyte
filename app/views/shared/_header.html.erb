@@ -7,10 +7,13 @@
     <div id="manage-menu">
       <ul>
         <li class="first">
-          <%= link_to_unless current_page?(new_post_path), t('.new') , new_post_path %>
+          <%= t('common.add') %>
+          <%= link_to_unless current_page?(new_post_path), t('.new_post') , new_post_path %>
+          <%= t('.or') %>
+          <%= link_to_unless current_page?(new_project_path), t('.new_project') , new_project_path %>
         </li>
         <li>
-          <%= link_to_unless current_page?(manage_posts_path), t('.manage') , manage_posts_path %>
+          <%= link_to_unless current_page?(manage_path), t('.manage') , manage_path %>
         </li>
         <li class="last">
           <%= link_to_unless current_page?(logout_path), t('.logout'), logout_path %>
@@ -22,19 +25,19 @@
   <div id="pages-menu">
     <ul>
       <li class="first">
-        <%= link_to_unless current_page?(root_path), t('.posts'), root_path %>
+        <%= link_to_unless current_page?(root_path), t('.home'), root_path %>
       </li>
       <li>
-        <%= link_to t('.mailme'), 'mailto:rezwyi@gmail.com' %>
+        <%= link_to_unless current_page?(posts_path), t('common.posts'), posts_path %>
       </li>
       <li class="last">
-        <%= link_to_unless current_page?(pages_about_path), t('.about'), pages_about_path %>
+        <%= link_to_unless current_page?(projects_path), t('common.projects'), projects_path %>
       </li>
     </ul>
 
     <div id="search">
       <%= form_tag searches_index_path, :method => :get do %>
-        <%= search_field_tag :query, params[:query], :placeholder => t('.search') %>
+        <%= search_field_tag :query, params[:query], :placeholder => t('common.search') %>
       <% end %>
     </div>
   </div>

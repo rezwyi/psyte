@@ -13,6 +13,7 @@ a {
 a:hover {
   text-decoration: underline;
 } 
+
 textarea, input, select {
   font-family: inherit;
 }
@@ -20,11 +21,6 @@ textarea, input, select {
 * {
   margin: 0;
   padding: 0;
-}
-
-.clear {
-  display: block;
-  height: 15px;
 }
 
 #wrapper {
@@ -51,7 +47,7 @@ textarea, input, select {
   font-size: 2em;
   font-weight: bold;
   float: left;
-  padding: 15px  0px 0px 0px;
+  padding: 15px 0 0 0;
 }
 
 #logo a {
@@ -79,7 +75,7 @@ textarea, input, select {
 
 #manage-menu {
   background-color: #655f63;
-  border-radius: 0px 0px 5px 5px;
+  border-radius: 0 0 5px 5px;
   font-size: 0.5em;
   float: right;
   padding: 5px 8px;
@@ -161,7 +157,7 @@ textarea, input, select {
   color: #fff;
   border-radius: 5px 5px 5px 5px;
   text-decoration: none;
-  padding: 0px 4px 0 4px;
+  padding: 0 4px 0 4px;
 }
 
 #pagination ul {
@@ -177,7 +173,7 @@ textarea, input, select {
 
 #pagination a {
   color: #655f63;
-  padding: 0px 4px 0 4px;
+  padding: 0 4px 0 4px;
 }
 
 #pagination a:hover {
@@ -185,7 +181,7 @@ textarea, input, select {
   color: #fff;
   border-radius: 5px 5px 5px 5px;
   text-decoration: none;
-  padding: 0px 4px 0 4px;
+  padding: 0x 4px 0 4px;
 }
 
 #wmd-input {
@@ -248,6 +244,76 @@ textarea, input, select {
   background-color: #f6f2ef;
 }
 
+#disqus_thread {
+  border-top: 1px dashed #bdafac;
+  margin: 30px 0 0 0;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.clear {
+  display: block;
+  height: 15px;
+}
+
+.form-top {
+  padding: 0 0 30px 0;
+}
+
+.form-top input, .form-top textarea {
+  border: 1px solid #bdafac;
+  border-radius: 5px;
+  width: 100%;
+  padding: 3px;
+}
+
+.form-top input:focus, .form textarea:focus {
+  background-color: #f6f2ef;
+}
+
+.form-top label {
+  font-weight: bold;
+  font-size: 0.7em;
+}
+
+.form-top-left {
+  float: left;
+  width: 401px;
+  margin: 0 15px 30px 0;
+}
+
+.form-top-right {
+  float: left;
+  width: 401px;
+  margin: 0 0 30px 15px ;
+}
+
+.form-bottom {
+  margin: 0 0 30px 0;
+}
+
+.form-bottom textarea {
+  border: 1px solid #bdafac;
+  border-radius: 5px;
+}
+
+.form-buttons {
+  clear: both;
+  margin: 60px 0 60px 0;
+}
+
+.form-buttons a {
+  color: #655f63;
+  font-size: 0.7em;
+}
+
+
 .login-form-buttons {
   margin: 30px 0 30px 0;
 }
@@ -261,22 +327,25 @@ textarea, input, select {
   margin: 0 0 30px 0;
 }
 
-h1.post-title {
-  font-size: 1.7em;
-  font-weight: bold;
-  margin: 0 0 25px 0;
+.post h1 {
+  margin: 0 0 5px 0;
 }
 
-.post-title a {
+.post h1 a, .project h1 a {
   color: #655f63;
+}
+
+.post h1 a:hover, .project h1 a:hover {
+  color: #bdafac;
+  text-decoration: none;
 }
 
 .post-info {
   color: #bdafac;
   font-size: 0.6em; 
-  border-bottom: 1px dashed;
+  border-top: 1px dashed;
   margin: 0 0 30px 0;
-  padding: 0 0 5px 0;
+  padding: 10px 0 5px 0;
 }
 
 .read-more {
@@ -299,10 +368,6 @@ h1.post-title {
   text-decoration: none;
 }
 
-.post-preface {
-  min-height: 180px;
-}
-
 .post-preface p:first-child img:first-child {
   float: left;
   margin: 0 10px 4px 0;
@@ -317,14 +382,9 @@ h1.post-title {
   margin: 30px 0 30px 30px;
 }
 
-.post-content a, .post-comments a, #wmd-preview a, #footer a, #disqus_thread a {
+.post-content a, .post-comments a, #wmd-preview a, #footer a, #disqus_thread a,
+.project-links a, .about a, .activity a {
   color: #655fc8;
-  font-weight: bold;
-  border-bottom: 1px dotted;
-}
-
-.post-content a:hover, #wmd-preview a:hover, #footer a:hover  {
-  text-decoration: none;
 }
 
 .post-content h2, h3, h4, h5, h6, #wmd-preview h2, h3, h4, h5, h6  {
@@ -337,38 +397,6 @@ h1.post-title {
 
 .post-content ol, .post-content ul, #wmd-preview ol, #wmd-preview ul  {
   margin: 10px 0 0 45px;
-}
-
-.post-form-top {
-  padding: 0 0 30px 0;
-}
-
-.post-form-top input {
-  border: 1px solid #bdafac;
-  border-radius: 5px;
-  width: 100%;
-  padding: 3px;
-}
-
-.post-form-top input:focus, .post-form textarea:focus {
-  background-color: #f6f2ef;
-}
-
-.post-form-top label {
-  font-weight: bold;
-  font-size: 0.7em;
-}
-
-.post-form-top-left {
-  float: left;
-  width: 401px;
-  margin: 0 15px 30px 0;
-}
-
-.post-form-top-right {
-  float: left;
-  width: 401px;
-  margin: 0 0 30px 15px ;
 }
 
 .tag-link {
@@ -388,24 +416,6 @@ h1.post-title {
   font-size: 0.6em;
 }
 
-.post-form-bottom {
-  margin: 0 0 30px 0;
-}
-
-.post-form-bottom textarea {
-  border: 1px solid #bdafac;
-  border-radius: 5px;
-}
-
-.post-form-buttons {
-  margin: 60px 0 60px 0;
-}
-
-.post-form-buttons a {
-  color: #655f63;
-  font-size: 0.7em;
-}
-
 .tag-posts, .search-posts {
   background-color: #f6f2ef;
   border: 1px dashed #bdafac;
@@ -416,7 +426,48 @@ h1.post-title {
   padding: 5px;
 }
 
-.manage-posts {
+.manage-tabs {
+  z-index: 1;
+  border-bottom: 1px solid #bdafac;
+  font-size: 0.7em;
+  font-weight: bold;
+  margin: 0 0 30px 0;
+}
+
+.manage-tabs a:hover {
+  text-decoration: none;
+}
+
+.manage-tabs ul {
+  display: inline;
+}
+
+.manage-tabs ul li {
+  background-color: #bdafac;
+  display: inline;
+  overflow: hidden;
+  border-bottom: 1px solid #bdafac;
+  border-radius: 5px 5px 0 0;
+  margin: 0 5px 0 5px;
+  padding: 5px 25px 0 25px;
+  list-style-type: none;
+}
+
+.manage-tabs ul li.current {
+  background-color: #fff;
+  border-top: 1px solid #bdafac;
+  border-left: 1px solid #bdafac;
+  border-right: 1px solid #bdafac;
+  border-bottom: 1px solid #fff;
+  padding: 10px 25px 0 25px;
+}
+
+.manage-tabs ul li.current a {
+  border-bottom: 3px solid #fff;
+  color: #655f63;
+}
+
+.manage-items {
   font-size: 0.7em;
   line-height: 4em;
   border-collapse: collapse;
@@ -424,18 +475,17 @@ h1.post-title {
   margin: 0 30px 30px 0;
 }
 
-.manage-posts .table-header {
+.manage-items .table-header {
   text-align: left;
 }
 
-.manage-posts tr {
+.manage-items tr {
   border-bottom: 1px dashed #bdafac;
 }
 
-.manage-posts a {
+.manage-items a {
   color: #655f63;
 }
-
 .button {
   color:#fff;
   background-color: #bdafac;
@@ -456,7 +506,62 @@ h1.post-title {
   border: 1px solid red;
 }
 
-#disqus_thread {
-  border-top: 1px dashed #bdafac;
-  margin: 30px 0px 0px 0px;
+.project {
+  margin: 0 0 60px 0;
+  min-height: 240px;
+}
+
+.project-thumb {
+  position: absolute;
+}
+
+.project-info {
+  margin: 0 0 0 270px;
+}
+
+.project-info h1 {
+  margin: 0 0 15px 0;
+}
+
+.project-info p {
+  font-size: 0.7em;
+  margin: 0 0 15px 0;
+}
+
+.about {
+  font-size: 0.7em;
+}
+
+.avatar img {
+  position: absolute;
+}
+
+.about-info {
+  margin: 0 0 0 280px;
+}
+
+.activity {
+  min-height: 260px;
+  font-size: 0.8em;
+  margin: 30px 0 0 0;
+}
+
+.recently-items {
+  width: 380px;
+}
+
+.recently-items h3 {
+  border-bottom: 1px dashed #bdafac;
+  padding: 0 0 15px 0;
+}
+
+.recently-items ol {
+  width: 300px;
+  margin: 0 0 0 50px;
+}
+
+.recently-items ol li.last {
+  margin: 25px 0 0 0;
+  font-style: italic;
+  list-style-type: none;
 }

@@ -1,0 +1,31 @@
+<% content_for :title, [t('head.title.manage_projects'), t(:title)].join(' - ') %>
+
+<%
+  t_datetime = t('date.formats.datetime')
+  t_date = t('date.formats.date')
+  t_edit = t('common.edit')
+  t_destroy = t('common.destroy')
+%>
+
+<tr class="table-header">
+  <th><%= t('common.ident') %></th>
+  <th><%= t('common.title') %></th>
+  <th><%= t('common.created_at') %></th>
+  <th></th>
+  <th></th>
+</tr>
+
+<% @items.each do |item| %>
+  <tr>
+    <td><%= item.id %></td>
+    <% if item.title.length > 60 %>
+      <td><%= "#{item.title[0,57]}..." %></td>
+    <% else %>
+      <td><%= item.title %></td>
+    <% end %>
+    
+    <td><%= item.created_at.strftime(t_datetime) %></td>
+    <td><%= link_to t_edit, edit_project_path(item) %></td>
+    <td><%= button_to t_destroy, item, :method => :delete, :class => 'button' %></td>
+  </tr>
+<% end %>
