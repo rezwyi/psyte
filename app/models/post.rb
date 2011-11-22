@@ -17,7 +17,7 @@ class Post < ActiveRecord::Base
 
   scope :published, where('published_at <= ?', Time.now.utc).order('id desc')
   scope :managed, order('id desc')
-  scope :recent, limit(5).order('id desc')
+  scope :recent, where('published_at <= ?', Time.now.utc).limit(5).order('id desc')
 
   def tag_names=(names)
     self.tags = Tag.with_names(names.split(/\s+/))
