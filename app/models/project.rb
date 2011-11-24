@@ -2,6 +2,7 @@ class Project < ActiveRecord::Base
   validates_presence_of :title, :description, :image_url
   has_friendly_id :ascii_title, :use_slug => true
 
+  default_scope order('id desc')
   scope :managed, order('id desc')
   scope :recent, limit(5).order('id desc')
 
