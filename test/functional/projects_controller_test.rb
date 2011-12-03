@@ -57,4 +57,18 @@ class ProjectsControllerTest < ActionController::TestCase
     delete :destroy, :id => @project_1.id
     assert_redirected_to root_path
   end
+
+  test 'should display correct title' do
+    get :index
+    assert_select 'title', title(t('common.projects'))
+    get :show, :id => @project_1.id
+    assert_select 'title', title("'#{@project_1.title}'")
+    get :feed, :format => :rss
+    assert_select 'title', t(:title)
+    login_as :user
+    get :new
+    assert_select 'title', title(t('head.title.new_project'))
+    get :edit, :id => @project_1.id
+    assert_select 'title', title("#{t('head.title.edit')} '#{@project_1.title}'")
+  end
 end

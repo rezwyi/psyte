@@ -37,4 +37,9 @@ class SessionsControllerTest < ActionController::TestCase
     assert_nil session[:user_id]
     assert_redirected_to root_path
   end
+
+  test 'should display correct title' do
+    get :new
+    assert_select 'title', title(t('head.title.login'))
+  end
 end

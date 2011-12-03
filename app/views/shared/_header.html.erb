@@ -37,7 +37,7 @@
 
     <div id="search">
       <%= form_tag searches_index_path, :method => :get do %>
-        <%= search_field_tag :query, params[:query], :placeholder => t('common.search') %>
+        <%= search_field_tag :query, params[:q], :placeholder => t('common.search') %>
       <% end %>
     </div>
   </div>

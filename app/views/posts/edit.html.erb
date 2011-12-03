@@ -1,4 +1,4 @@
-<% content_for :title, ["#{t('head.title.edit')} '#{@post.title}'", t(:title)].join(' - ')  %>
+<% content_for :title, title("#{t('head.title.edit')} '#{@post.title}'")  %>
 
 <% content_for :javascripts do %>
   <% javascript_include_tag 'showdown', 'wmd' %>

@@ -1,4 +1,4 @@
-<% content_for :title, [t('head.title.new_project'), t(:title)].join(' - ') %>
+<% content_for :title, title(t('head.title.new_project')) %>
 
 <div class="form">
   <%= form_for @project do |form| %>

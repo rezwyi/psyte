@@ -8,5 +8,4 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:id])
     @posts = @tag.posts.published
   end
-
 end

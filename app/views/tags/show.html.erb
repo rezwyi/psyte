@@ -1,4 +1,4 @@
-<% content_for :title, ["#{t('head.title.tag')} '#{@tag.name}'", t(:title)].join(' - ') %>
+<% content_for :title, title("#{t('head.title.tag')} '#{@tag.name}'") %>
 
 <div class="tag-posts">
   <%= t('.tag_posts') + ' ' %>"<b><%= @tag.name %></b>" (<%= t('common.count') + ' ' + @posts.count.to_s %>)

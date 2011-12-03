@@ -130,4 +130,17 @@ class PostsControllerTest < ActionController::TestCase
     end
   end
 
+  test 'should display correct title' do
+    get :index
+    assert_select 'title', title(t('common.posts'))
+    get :show, :id => @post_1.id
+    assert_select 'title', title("'#{@post_1.title}'")
+    get :feed, :format => :rss
+    assert_select 'title', t(:title)
+    login_as :user
+    get :new
+    assert_select 'title', title(t('head.title.new_post'))
+    get :edit, :id => @post_1.id
+    assert_select 'title', title("#{t('head.title.edit')} '#{@post_1.title}'")
+  end
 end

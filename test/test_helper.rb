@@ -14,4 +14,8 @@ class ActiveSupport::TestCase
     user = User.find_by_name(name)
     session[:user_id] = user.id
   end 
+
+  def title(title)
+    [title, t(:title)].join(' - ')
+  end
 end

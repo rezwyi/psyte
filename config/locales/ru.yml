@@ -40,6 +40,9 @@ ru:
       new_project: 'Добавление проекта'
       manage_posts: 'Управление статьями'
       manage_projects: 'Управление проектами'
+      login: 'Вход'
+      posts_feed: 'Лента статей'
+      projects_feed: 'Лента проектов'
 
   shared:
     header:

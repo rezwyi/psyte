@@ -1,4 +1,4 @@
-<% content_for :title, ["'#{@post.title}'", t(:title)].join(' - ') %>
+<% content_for :title, title("'#{@post.title}'") %>
 
 <%= render @post %>
 
