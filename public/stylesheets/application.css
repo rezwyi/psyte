@@ -581,3 +581,15 @@ blockquote {
   font-style: italic;
   list-style-type: none;
 }
+
+.icon-twitter {
+  background: url("/images/twitter.png") no-repeat scroll left 50% transparent;
+  padding: 1px 0 1px 20px;
+  margin: 0 0 0 10px;
+}
+
+.icon-flickr {
+  background: url("/images/flickr.png") no-repeat scroll left 50% transparent;
+  padding: 1px 0 1px 20px;
+  margin: 0 0 0 10px;
+}
