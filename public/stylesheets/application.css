@@ -45,7 +45,7 @@ blockquote {
 }
 
 #header {
-  height: 170px;
+  height: 185px;
 }
 
 #content {
@@ -62,7 +62,7 @@ blockquote {
   font-size: 2em;
   font-weight: bold;
   float: left;
-  padding: 15px 0 0 0;
+  padding: 30px 0 0 0;
 }
 
 #logo a {
