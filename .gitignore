@@ -1,5 +1,4 @@
 Capfile
-Gemfile.lock
 .bundle
 .vimsession
 config/deploy.rb
