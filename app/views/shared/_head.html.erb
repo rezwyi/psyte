@@ -1,13 +1,32 @@
 <head>
   <title><%= yield :title %></title>
 
-  <%= stylesheet_link_tag 'application', 'zenburn' %>
   <%= javascript_include_tag :defaults, 'highlight.pack' %>
+  <%= stylesheet_link_tag 'application', 'zenburn' %>
   <%= csrf_meta_tag %>
 
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="alternate" type="application/rss+xml" href="<%= feed_posts_path %>" />
+
   <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+
+  <% unless current_user %>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#login-link').click(function(event) {
+          var $form = $('#login-form-modal');
+
+          if ($form.css('display') != 'block') {
+            $form.fadeIn('fast');
+          } else {
+            $form.fadeOut('fast');
+          }
+
+          event.preventDefault();
+        });
+      });
+    </script>
+  <% end %>
 
   <%= yield :javascripts %>
   <%= yield :stylesheets %>

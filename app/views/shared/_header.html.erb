@@ -3,24 +3,30 @@
     <%= link_to_unless current_page?(root_url), 'Rezvanov<span>.info</span>'.html_safe, root_url %>
   </div>
 
-  <% if current_user %>
-    <div id="manage-menu">
-      <ul>
-        <li class="first">
-          <%= t('common.add') %>
-          <%= link_to_unless current_page?(new_post_path), t('.new_post') , new_post_path %>
-          <%= t('.or') %>
-          <%= link_to_unless current_page?(new_project_path), t('.new_project') , new_project_path %>
-        </li>
-        <li>
-          <%= link_to_unless current_page?(manage_path), t('.manage') , manage_path %>
-        </li>
-        <li class="last">
-          <%= link_to_unless current_page?(logout_path), t('.logout'), logout_path %>
-        </li>
-      </ul>
+  <% unless current_user %>
+    <%= link_to t('.login'), login_path, :id => 'login-link' %>
+
+    <div id="login-form-modal">
+      <%= render :partial => 'sessions/form', :locals => { :remote => true } %>
     </div>
   <% end %>
+
+  <div id="manage-menu" <%= "style='display:none'" unless current_user %>>
+    <ul>
+      <li class="first">
+        <%= t('common.add') %>
+        <%= link_to_unless current_page?(new_post_path), t('.new_post'), new_post_path %>
+        <%= t('.or') %>
+        <%= link_to_unless current_page?(new_project_path), t('.new_project'), new_project_path %>
+      </li>
+      <li>
+        <%= link_to_unless current_page?(manage_path), t('.manage'), manage_path %>
+      </li>
+      <li class="last">
+        <%= link_to_unless current_page?(logout_path), t('.logout'), logout_path %>
+      </li>
+    </ul>
+  </div>
   
   <div id="pages-menu">
     <ul>

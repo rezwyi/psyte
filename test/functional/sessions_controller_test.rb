@@ -17,7 +17,7 @@ class SessionsControllerTest < ActionController::TestCase
   test 'if user and password is valid create action should create new session' do
     post :create, :login => 'user', :password => '123'
     assert_equal session[:user_id], @user.id
-    assert_redirected_to posts_path
+    assert_redirected_to root_path
   end
 
   test 'if user and password is not valid  create action should render new template' do

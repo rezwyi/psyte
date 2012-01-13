@@ -51,6 +51,7 @@ ru:
       or: 'или'
       new_project: 'проект'
       manage: 'Управление'
+      login: 'Вход'
       logout: 'Выход'
 
   social:
@@ -70,7 +71,7 @@ ru:
       description: 'Лента сообщений блога'
 
   sessions:
-    new:
+    form:
       login: 'Логин'
       password: 'Пароль'
       sign_in: 'Войти'

@@ -1,16 +1,5 @@
 <% content_for :title, title(t('head.title.login')) %>
 
-<%= form_tag sessions_path do %>
-  <div id="login-form">
-    <p><%= label_tag :login, t('.login') %></p>
-    <p><%= text_field_tag :login, params[:login], :autofocus => true %></p>
-    <p><%= label_tag :password, t('.password') %></p>
-    <p><%= password_field_tag :password %></p>
-
-    <div class="login-form-buttons">
-      <%= submit_tag t('.sign_in'), :class => 'button' %>
-      <%= link_to t('common.back'), :back %>
-    </div>
-
-  </div>
-<% end %>
+<div id="login-form">
+  <%= render :partial => 'form', :locals => { :back => true } %>
+</div>
