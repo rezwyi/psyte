@@ -4,6 +4,7 @@ Capfile
 config/deploy.rb
 config/database.yml
 db/*.sqlite3
+db/data.yml
 log/*.log
 tmp/**/*
 vendor/bundle
