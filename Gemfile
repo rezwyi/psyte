@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rake', '0.9.2'
+gem 'rake', '0.9.2.2'
 gem 'unicorn', '3.6.2'
 gem 'rails', '3.0.12'
 gem 'russian', '0.6.0'
