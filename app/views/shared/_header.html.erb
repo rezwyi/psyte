@@ -36,8 +36,11 @@
       <li>
         <%= link_to_unless current_page?(posts_path), t('common.posts'), posts_path %>
       </li>
-      <li class="last">
+      <li>
         <%= link_to_unless current_page?(projects_path), t('common.projects'), projects_path %>
+      </li>
+      <li class="last">
+        <%= link_to t(:twitter), 'http://twitter.com/rezwyi', :target => 'blank' %>
       </li>
     </ul>
 

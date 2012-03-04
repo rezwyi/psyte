@@ -2,7 +2,7 @@ ru:
   title: 'Rezvanov.info'
   welcome: 'Добро пожаловать!'
   copyright: '©'
-  follow: 'Следуйте за мной:'
+  twitter: '@rezwyi'
 
   date:
     formats:
@@ -53,11 +53,6 @@ ru:
       manage: 'Управление'
       login: 'Вход'
       logout: 'Выход'
-
-  social:
-    linkedin: 'LinkedIn'
-    github: 'Github'
-    twitter: 'Twitter'
 
   posts:
     form:
