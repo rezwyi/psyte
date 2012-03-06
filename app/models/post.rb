@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
   SEPARATOR = '<!--more-->'
 
+  attr_accessible :title, :markdown, :published_at
+
   cattr_reader :per_page
   @@per_page = 7
 
@@ -48,5 +50,4 @@ class Post < ActiveRecord::Base
       self.content = RDiscount.new(self.markdown, :filter_html).to_html
     end
   end
-
 end

@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
   def create
     #prevent session fixation
     reset_session
+
     user = User.authenticate(params[:login], params[:password])
     if user
       session[:user_id] = user.id

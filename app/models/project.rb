@@ -1,4 +1,7 @@
 class Project < ActiveRecord::Base
+  attr_accessible :title, :image_url, :production_url, :source_url,
+                  :description
+
   validates_presence_of :title, :description, :image_url
   has_friendly_id :ascii_title, :use_slug => true
 
@@ -15,5 +18,4 @@ class Project < ActiveRecord::Base
     end
     arr.join('-')
   end
-
 end
