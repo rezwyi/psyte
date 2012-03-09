@@ -22,7 +22,7 @@
       </div>
 
       <% unless yield(:pagination).blank? %>
-        <div id="pagination"><%= yield :pagination %></div>
+        <%= yield :pagination %>
       <% end %>
 
       <%= render :partial => 'shared/footer' %>

@@ -95,3 +95,11 @@ ru:
       recently_posts: 'Недавние статьи...'
       recently_projects: 'Недавние проекты...'
       show_all: 'Показать все »'
+
+  views:
+    pagination:
+      truncate: '...'
+      first: '«'
+      previous: '←'
+      next: '→'
+      last: '»'

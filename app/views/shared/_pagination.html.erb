@@ -1,10 +1,1 @@
-<% unless items.total_pages == 1 %>
-  <ul>
-    <% current_page = 'class="current-page"'.html_safe %>
-    <% for item in 1..items.total_pages %>
-      <li <%= current_page if item == items.current_page %>>
-        <%= link_to item, params.merge(:page => item) %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<%= paginate items %>

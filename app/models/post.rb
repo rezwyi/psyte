@@ -3,9 +3,6 @@ class Post < ActiveRecord::Base
 
   attr_accessible :title, :markdown, :published_at
 
-  cattr_reader :per_page
-  @@per_page = 7
-
   belongs_to :user
   has_many :taggings, :dependent => :destroy
   has_many :tags, :through => :taggings
@@ -20,6 +17,8 @@ class Post < ActiveRecord::Base
   scope :published, where('published_at <= ?', Time.now.utc).order('id desc')
   scope :managed, order('id desc')
   scope :recent, where('published_at <= ?', Time.now.utc).limit(5).order('id desc')
+
+  paginates_per 7
 
   def tag_names=(names)
     self.tags = Tag.with_names(names.split(/\s+/))

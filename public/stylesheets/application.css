@@ -12,7 +12,7 @@ a {
 
 a:hover {
   text-decoration: underline;
-} 
+}
 
 textarea, input, select {
   font-family: inherit;
@@ -163,40 +163,30 @@ blockquote {
   margin: 0 8px 0 0;
 }
 
-#pagination {
-  margin: 60px 0 30px 0;
+nav.pagination {
+  color: #655F63;
+  text-align: center;
+  margin: 0 0 30px 0;
 }
 
-#pagination .current-page a {
-  background-color: #655f63;
-  color: #fff;
-  border-radius: 5px 5px 5px 5px;
-  text-decoration: none;
+nav.pagination span a {
+  color: #655FC8;
+  padding: 0 4px 0 4px;
+}
+nav.pagination span.current {
   padding: 0 4px 0 4px;
 }
 
-#pagination ul {
-  display: inline;
+nav.pagination span.prev {
+  margin: 0 15px 0 0;
 }
 
-#pagination li {
-  display: inline;
-  font-size: 0.7em;
-  list-style-type: none;
-  padding: 0 4px 0 4px;
+nav.pagination span.next {
+  margin: 0 0 0 15px;
 }
 
-#pagination a {
-  color: #655f63;
-  padding: 0 4px 0 4px;
-}
-
-#pagination a:hover {
-  background-color: #655f63;
-  color: #fff;
-  border-radius: 5px 5px 5px 5px;
-  text-decoration: none;
-  padding: 0x 4px 0 4px;
+nav.pagination span.gap {
+  color: #655FC8;
 }
 
 #wmd-input {

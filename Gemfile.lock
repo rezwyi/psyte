@@ -48,6 +48,10 @@ GEM
       railties (~> 3.0)
       thor (~> 0.14)
     json (1.6.5)
+    kaminari (0.13.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      railties (>= 3.0.0)
     kgio (2.6.0)
     mail (2.2.19)
       activesupport (>= 2.3.6)
@@ -97,7 +101,6 @@ GEM
     unicorn (3.6.2)
       kgio (~> 2.3)
       rack
-    will_paginate (3.0.pre2)
     yaml_db (0.2.2)
 
 PLATFORMS
@@ -108,11 +111,11 @@ DEPENDENCIES
   capistrano (= 2.9.0)
   friendly_id (= 3.3.0.1)
   jquery-rails
+  kaminari
   mysql2 (= 0.2.6)
   rails (= 3.0.12)
   rake (= 0.9.2.2)
   rdiscount
   russian (= 0.6.0)
   unicorn (= 3.6.2)
-  will_paginate (= 3.0.pre2)
   yaml_db

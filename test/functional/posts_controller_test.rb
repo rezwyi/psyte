@@ -3,9 +3,7 @@ require 'test_helper'
 class PostsControllerTest < ActionController::TestCase
   def setup
     request.env['HTTP_REFERER'] = '/'
-
     @post_1 = posts(:post_1)
-    @per_page = 7
   end
 
   def teardown
@@ -108,9 +106,9 @@ class PostsControllerTest < ActionController::TestCase
     assert_redirected_to root_path
   end
 
-  test 'index view should show only :per_page posts' do
+  test 'index view should show only 7 posts' do
     get :index
-    assert_select '#content div.post', @per_page
+    assert_select '#content div.post', 7
   end
 
   test 'post with preface should view "read-more" link' do
@@ -121,12 +119,14 @@ class PostsControllerTest < ActionController::TestCase
     end
   end
 
-  test 'if posts count more than :per_page, index view should show pagination' do
+  test 'if posts count more than 7, index view should show pagination' do
     get :index
-    assert_select 'div#pagination' do 
-      assert_select 'ul li a', '1'
-      assert_select 'ul li a', '2'
+    assert_select 'nav.pagination' do 
+      assert_select 'span.current', '1'
+      assert_select 'span.page a', '2'
       # ... and more
+      assert_select 'span.next'
+      assert_select 'span.last'
     end
   end
 

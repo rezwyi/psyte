@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :login_required, :only => [ :new, :create, :edit, :update, :destroy ]
 
   def index
-    @posts = Post.published.paginate(:page => params[:page], :per_page => Post.per_page)
+    @posts = Post.published.page(params[:page])
   end
 
   def show
