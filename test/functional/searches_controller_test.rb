@@ -7,7 +7,7 @@ class SearchesControllerTest < ActionController::TestCase
   end
 
   test 'index action should find some posts' do
-    get :index, { :q => 'content' }
+    get :index, { :query => 'content' }
     assert_not_nil assigns(:posts)
     assert_template :index
     assert_select '.search-posts',
@@ -15,7 +15,7 @@ class SearchesControllerTest < ActionController::TestCase
   end
 
   test 'should display correct title' do
-    get :index, { :q => 'content' }
+    get :index, { :query => 'content' }
     assert_select 'title', title(t('common.search'))
   end
 end
