@@ -15,5 +15,4 @@ class TagTest < ActiveSupport::TestCase
     Tag.with_names(%w[four five six]).map(&:save)
     assert_in_delta @count + 3, Tag.all.count, 3
   end
-
 end

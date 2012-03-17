@@ -88,8 +88,22 @@ class PostsControllerTest < ActionController::TestCase
 
   test 'if user logged in and post is valid udpate action should update post' do
     login_as :user
-    put :update, :id => @post_1.id, :post => { :markdown => 'content'.reverse }
+
+    title = 'title'.reverse
+    published_at = 5.days.ago
+    markdown = 'content'.reverse
+    tag_names = 'first-tag second-tag third-tag'
+
+    put :update, :id => @post_1.id, :post => { :title => title,
+                                               :published_at => published_at,
+                                               :markdown => markdown,
+                                               :tag_names => tag_names }
+
     assert_redirected_to post_path(assigns(:post))
+    assert_equal title, assigns(:post).title
+    assert_equal published_at, assigns(:post).published_at
+    assert_equal markdown, assigns(:post).markdown
+    assert_equal 3, assigns(:post).tags.count
   end
 
   test 'if user logged in and post is not valid udpate action should render edit template' do

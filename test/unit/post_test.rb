@@ -25,14 +25,20 @@ class PostTest < ActiveSupport::TestCase
     @post_1.markdown = nil
     assert !@post_1.valid?
   end
+
+  test 'should save tags successfull' do
+    @post_1.tag_names = 'first-tag second-tag'
+    @post_1.save!
+    assert_equal 2, @post_1.tags.count
+  end
   
   test 'preface and content should not be empty if the markdown contains the delimiter' do
-    @post_1.save
+    @post_1.save!
     assert @post_1.preface && @post_1.content
   end
   
   test 'preface should be empty but the content is not if markdown not contain the delimiter' do
-    @post_2.save
+    @post_2.save!
     assert !@post_2.preface && @post_2.content
   end
 

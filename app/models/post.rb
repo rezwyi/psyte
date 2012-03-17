@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   SEPARATOR = '<!--more-->'
 
-  attr_accessible :title, :markdown, :published_at
+  attr_accessible :title, :markdown, :published_at, :tag_names
 
   belongs_to :user
   has_many :taggings, :dependent => :destroy
