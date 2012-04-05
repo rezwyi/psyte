@@ -108,6 +108,8 @@ GEM
       rspec (~> 2.9.0)
     russian (0.6.0)
       i18n (>= 0.5.0)
+    rvm-capistrano (1.0.2)
+      capistrano (>= 2.0.0)
     thor (0.14.6)
     treetop (1.4.10)
       polyglot
@@ -134,5 +136,6 @@ DEPENDENCIES
   rdiscount
   rspec-rails (= 2.9.0)
   russian (= 0.6.0)
+  rvm-capistrano
   unicorn (= 4.2.1)
   yaml_db
