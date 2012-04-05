@@ -8,3 +8,4 @@ db/data.yml
 log/*.log
 tmp/**/*
 vendor/bundle
+.DS_Store
