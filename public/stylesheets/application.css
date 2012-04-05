@@ -1,7 +1,7 @@
 /* Color palette from http://www.colourlovers.com/palette/1533081/grey */
 body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.3em;
+  font-family: Serif, Helvetica, Arial, sans-serif;
+  font-size: 1.6em;
   color: #655f63;
 }
 
@@ -15,6 +15,7 @@ a:hover {
 }
 
 textarea, input, select {
+  font-size: 0.7em;
   font-family: inherit;
 }
 
@@ -451,10 +452,9 @@ nav.pagination span.gap {
   z-index: 1;
   border-bottom: 1px solid #bdafac;
   font-size: 0.7em;
-  font-weight: bold;
-  margin: 0 0 30px 0;
-  height: 22px;
-  text-align: center;
+  margin: 30px 0 30px 0;
+  height: 1.54em;
+  text-align: right;
 }
 
 .manage-tabs a:hover {
@@ -469,19 +469,14 @@ nav.pagination span.gap {
   background-color: #bdafac;
   display: inline;
   overflow: hidden;
-  border: 1px solid #bdafac;
   border-radius: 5px 5px 0 0;
-  margin: 0 5px 0 5px;
+  margin: 0 3px 0 3px;
   padding: 5px 25px 5px 25px;
   list-style-type: none;
 }
 
 .manage-tabs ul li:hover, .manage-tabs ul li.current {
   background-color: #726d74;
-  border-top: 1px solid #726d74;
-  border-left: 1px solid #726d74;
-  border-right: 1px solid #726d74;
-  border-bottom: 1px solid #bdafac;
   padding-top: 10px;
 }
 
@@ -501,6 +496,13 @@ nav.pagination span.gap {
   border-bottom: 1px dashed #bdafac;
 }
 
+.manage-items tr td {
+  max-width: 250px;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0 5px 0 15px;
+}
+
 .manage-items a {
   color: #655f63;
 }
@@ -510,6 +512,7 @@ nav.pagination span.gap {
 }
 
 .button {
+  font-size: 15px;
   color: #fff;
   background-color: #bdafac;
   border: none;
@@ -522,7 +525,7 @@ nav.pagination span.gap {
 }
 
 a.button {
-  font-size: 0.5em;
+  font-size: 0.6em;
 }
 
 a.button:hover {
@@ -568,8 +571,15 @@ a.button:hover {
 }
 
 .about-info {
-  min-height: 240px;
-  margin: 0 0 0 280px;
+  font-size: 1em;
+  font-style: italic;
+  min-height: 280px;
+  margin: 0 0 0 350px;
+  padding: 35px 0 0 0;
+}
+
+.about-info p {
+  margin: 0 0 15px 0;
 }
 
 .activity {
@@ -588,8 +598,7 @@ a.button:hover {
 }
 
 .recently-items ol {
-  width: 300px;
-  margin: 0 0 60px 50px;
+  margin: 0 0 60px 40px;
 }
 
 .recently-items ol li.last {
