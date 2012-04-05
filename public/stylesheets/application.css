@@ -281,6 +281,7 @@ nav.pagination span.gap {
 .clear {
   display: block;
   height: 15px;
+  clear: both;
 }
 
 .form-top {
@@ -369,7 +370,7 @@ nav.pagination span.gap {
 }
 
 .read-more {
-  text-align: right;
+  text-align: left;
   margin: 20px 0 70px 0;
 }
 
@@ -452,6 +453,8 @@ nav.pagination span.gap {
   font-size: 0.7em;
   font-weight: bold;
   margin: 0 0 30px 0;
+  height: 22px;
+  text-align: center;
 }
 
 .manage-tabs a:hover {
@@ -466,25 +469,20 @@ nav.pagination span.gap {
   background-color: #bdafac;
   display: inline;
   overflow: hidden;
-  border-bottom: 1px solid #bdafac;
+  border: 1px solid #bdafac;
   border-radius: 5px 5px 0 0;
   margin: 0 5px 0 5px;
-  padding: 5px 25px 0 25px;
+  padding: 5px 25px 5px 25px;
   list-style-type: none;
 }
 
-.manage-tabs ul li.current {
-  background-color: #fff;
-  border-top: 1px solid #bdafac;
-  border-left: 1px solid #bdafac;
-  border-right: 1px solid #bdafac;
-  border-bottom: 1px solid #fff;
-  padding: 10px 25px 0 25px;
-}
-
-.manage-tabs ul li.current a {
-  border-bottom: 3px solid #fff;
-  color: #655f63;
+.manage-tabs ul li:hover, .manage-tabs ul li.current {
+  background-color: #726d74;
+  border-top: 1px solid #726d74;
+  border-left: 1px solid #726d74;
+  border-right: 1px solid #726d74;
+  border-bottom: 1px solid #bdafac;
+  padding-top: 10px;
 }
 
 .manage-items {
@@ -506,8 +504,13 @@ nav.pagination span.gap {
 .manage-items a {
   color: #655f63;
 }
+
+.manage-actions {
+  margin: 15px 0 15px 0;
+}
+
 .button {
-  color:#fff;
+  color: #fff;
   background-color: #bdafac;
   border: none;
   border-radius: 5px;
@@ -516,6 +519,14 @@ nav.pagination span.gap {
 
 .button:hover {
   background-color: #726d74;
+}
+
+a.button {
+  font-size: 0.5em;
+}
+
+a.button:hover {
+  text-decoration: none;
 }
 
 .field_with_errors label {
@@ -557,6 +568,7 @@ nav.pagination span.gap {
 }
 
 .about-info {
+  min-height: 240px;
   margin: 0 0 0 280px;
 }
 

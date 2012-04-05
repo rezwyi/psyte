@@ -1,16 +1,16 @@
-<% content_for :title, title(t('head.title.new_post')) %>
+<% content_for :title, title("#{t('head.title.edit')} '#{@post.title}'")  %>
 
 <% content_for :javascripts do %>
   <% javascript_include_tag 'showdown', 'wmd' %>
 <% end %>
 
 <div class="form">
-  <%= form_for @post do |form| %>
+  <%= form_for [ :admin, @post ] do |form| %>
     <%= render :partial => 'form', :locals => { :form => form } %>
     <%= render :partial => 'preview', :locals => { :post => @post } %>
     <div class="form-buttons">
-      <%= form.submit t('common.add'), :class => 'button' %>
+      <%= form.submit t('common.save'), :class => 'button' %>
       <%= link_to t('common.back'), :back %>
     </div>
   <% end %>
-</div>  
+</div>

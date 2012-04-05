@@ -23,6 +23,8 @@ ru:
     back: 'Назад'
     posts: 'Блог'
     projects: 'Проекты'
+    tags: 'Тэги'
+    snippets: 'Сниппеты'
     search: 'Поиск...'
     title: 'Заголовок'
     ident: 'Идент.'
@@ -31,6 +33,7 @@ ru:
     edit: 'Редактировать'
     destroy: 'Удалить'
     count: 'всего'
+    name: 'Имя'
 
   head:
     title:
@@ -38,8 +41,12 @@ ru:
       tag: 'Тэг'
       new_post: 'Добавление статьи'
       new_project: 'Добавление проекта'
-      manage_posts: 'Управление статьями'
-      manage_projects: 'Управление проектами'
+      new_tag: 'Добавление тэга'
+      new_snippet: 'Добавление сниппета'
+      admin_posts: 'Управление статьями'
+      admin_projects: 'Управление проектами'
+      admin_tags: 'Управление тэгами'
+      admin_snippets: 'Управление сниппетами'
       login: 'Вход'
       posts_feed: 'Лента статей'
       projects_feed: 'Лента проектов'
@@ -50,15 +57,11 @@ ru:
       new_post: 'статью'
       or: 'или'
       new_project: 'проект'
-      manage: 'Управление'
+      admin: 'Управление'
       login: 'Вход'
       logout: 'Выход'
 
   posts:
-    form:
-      content: 'Содержимое'
-      tags: 'Тэги'
-
     post:
       read_more: 'Подробнее »'
 
@@ -84,12 +87,6 @@ ru:
       production_url: 'Сайт проекта'
       source_url: 'Исходники'
 
-    form:
-      description: 'Описание'
-      image_url: 'Ссылка на картинку проекта'
-      production_url: 'Ссылка на сайт проекта'
-      source_url: 'Ссылка на исходники проекта'
-
   pages:
     home:
       recently_posts: 'Недавние статьи...'
@@ -103,3 +100,11 @@ ru:
       previous: '←'
       next: '→'
       last: '»'
+  
+  admin:
+    projects:
+      form:
+        description: 'Описание'
+        image_url: 'Ссылка на картинку проекта'
+        production_url: 'Ссылка на сайт проекта'
+        source_url: 'Ссылка на исходники проекта'

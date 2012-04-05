@@ -1,0 +1,7 @@
+<tr>
+  <td><%= post.id %></td>
+  <td><%= post.title %></td>
+  <td><%= post.created_at.strftime(t('date.formats.datetime')) %></td>
+  <td><%= link_to t('common.edit'), edit_admin_post_path(post) %></td>
+  <td><%= button_to t('common.destroy'), admin_post_path(post), :method => :delete, :class => 'button' %></td>
+</tr>

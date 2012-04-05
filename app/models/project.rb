@@ -1,13 +1,12 @@
 class Project < ActiveRecord::Base
-  attr_accessible :title, :image_url, :production_url, :source_url,
-                  :description
-
   validates_presence_of :title, :description, :image_url
   has_friendly_id :ascii_title, :use_slug => true
 
-  default_scope order('id desc')
-  scope :managed, order('id desc')
-  scope :recent, limit(5).order('id desc')
+  scope :active, lambda { where('created_at is not null').order('id desc') }
+  scope :managed, lambda { order('id desc') }
+  scope :recent, lambda { limit(5).order('id desc') }
+
+  paginates_per 4
 
   private
 
@@ -16,6 +15,6 @@ class Project < ActiveRecord::Base
     self.title.split(' ').each do |word|
       arr << Russian::translit(word.downcase)
     end
-    arr.join('-')
+    arr.join('-').html_safe
   end
 end

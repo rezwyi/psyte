@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <%= render :partial => 'shared/head' %>
+
+  <body>
+    <a target="blank" href="http://github.com/rezwyi">
+      <img id="gh-ribbon" src="https://a248.e.akamai.net/assets.github.com/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub">
+    </a>
+
+    <div id="wrapper">
+      <%= render :partial => 'shared/header' %>
+
+      <div class="manage-tabs">
+        <ul>
+          <li<%= current_class(admin_posts_path) or current_class(admin_path) %>>
+            <%= link_to t('common.posts'), admin_posts_path %>
+          </li>
+          <li<%= current_class(admin_projects_path) %>>
+            <%= link_to t('common.projects'), admin_projects_path %>
+          </li>
+          <li<%= current_class(admin_tags_path) %>>
+            <%= link_to t('common.tags'), admin_tags_path %>
+          </li>
+          <li<%= current_class(admin_snippets_path) %>>
+            <%= link_to t('common.snippets'), admin_snippets_path %>
+          </li>
+        </ul>
+      </div>
+
+      <div id="content">
+        <div id="content-elements"><%= yield %></div>
+      </div>
+
+      <% unless yield(:pagination).blank? %>
+        <%= yield :pagination %>
+      <% end %>
+
+      <%= render :partial => 'shared/footer' %>
+    </div>
+  </body>
+</html>
+

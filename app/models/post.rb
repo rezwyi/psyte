@@ -1,22 +1,20 @@
 class Post < ActiveRecord::Base
   SEPARATOR = '<!--more-->'
 
-  attr_accessible :title, :markdown, :published_at, :tag_names
-
   belongs_to :user
   has_many :taggings, :dependent => :destroy
   has_many :tags, :through => :taggings
 
   has_friendly_id :ascii_title, :use_slug => true
 
-  validates_presence_of :user_id, :title, :published_at, :markdown
-  validates_uniqueness_of :title
+  validates :user_id, :title, :published_at, :markdown, :presence => true
+  validates :title, :uniqueness => true
 
   before_save :save_html
 
-  scope :published, where('published_at <= ?', Time.now.utc).order('id desc')
-  scope :managed, order('id desc')
-  scope :recent, where('published_at <= ?', Time.now.utc).limit(5).order('id desc')
+  scope :published, lambda { where('published_at <= ?', Time.now.utc).order('id desc') }
+  scope :managed, lambda { order('id desc') }
+  scope :recent, lambda { where('published_at <= ?', Time.now.utc).limit(5).order('id desc') }
 
   paginates_per 7
 

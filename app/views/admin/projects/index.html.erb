@@ -1,0 +1,22 @@
+<% content_for :title, title(t('head.title.admin_projects')) %>
+
+<% content_for :pagination do %>
+  <%= render :partial => 'shared/pagination', :locals => { :items => @projects } %>
+<% end %>
+
+<div class="manage-actions">
+  <%= link_to t('common.add'), new_admin_project_path, :class => 'button' %>
+</div>
+
+<table class="manage-items">
+  <tbody>
+    <tr class="table-header">
+      <th><%= t('common.ident') %></th>
+      <th><%= t('common.title') %></th>
+      <th><%= t('common.created_at') %></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <%= render @projects %>
+  </tbody>
+</table>

@@ -1,0 +1,7 @@
+<tr>
+  <td><%= snippet.id %></td>
+  <td><%= snippet.name %></td>
+  <td><%= snippet.created_at.strftime(t('date.formats.datetime')) %></td>
+  <td><%= link_to t('common.edit'), edit_admin_snippet_path(snippet) %></td>
+  <td><%= button_to t('common.destroy'), admin_snippet_path(snippet), :method => :delete, :class => 'button' %></td>
+</tr>

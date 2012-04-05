@@ -1,0 +1,22 @@
+<% content_for :title, title(t('head.title.admin_snippets')) %>
+
+<% content_for :pagination do %>
+  <%= render :partial => 'shared/pagination', :locals => { :items => @snippets } %>
+<% end %>
+
+<div class="manage-actions">
+  <%= link_to t('common.add'), new_admin_snippet_path, :class => 'button' %>
+</div>
+
+<table class="manage-items">
+  <tbody>
+    <tr class="table-header">
+      <th><%= t('common.ident') %></th>
+      <th><%= t('common.name') %></th>
+      <th><%= t('common.created_at') %></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <%= render @snippets %>
+  </tbody>
+</table>

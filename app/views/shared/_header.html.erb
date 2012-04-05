@@ -15,12 +15,12 @@
     <ul>
       <li class="first">
         <%= t('common.add') %>
-        <%= link_to_unless current_page?(new_post_path), t('.new_post'), new_post_path %>
+        <%= link_to_unless current_page?(new_admin_post_path), t('.new_post'), new_admin_post_path %>
         <%= t('.or') %>
-        <%= link_to_unless current_page?(new_project_path), t('.new_project'), new_project_path %>
+        <%= link_to_unless current_page?(new_admin_project_path), t('.new_project'), new_admin_project_path %>
       </li>
       <li>
-        <%= link_to_unless current_page?(manage_path), t('.manage'), manage_path %>
+        <%= link_to_unless current_page?(admin_path), t('.admin'), admin_path %>
       </li>
       <li class="last">
         <%= link_to_unless current_page?(logout_path), t('.logout'), logout_path %>

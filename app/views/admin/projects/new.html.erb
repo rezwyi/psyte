@@ -1,7 +1,7 @@
 <% content_for :title, title(t('head.title.new_project')) %>
 
 <div class="form">
-  <%= form_for @project do |form| %>
+  <%= form_for [ :admin, @project ] do |form| %>
     <%= render :partial => 'form', :locals => { :form => form } %>
 
     <div class="form-buttons">
