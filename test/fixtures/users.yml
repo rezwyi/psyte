@@ -1,8 +1,0 @@
-<% password = '123'; salt = BCrypt::Engine.generate_salt %>
-
-user:
-  name: user
-  login: user
-  password_hash: <%= BCrypt::Engine.hash_secret(password, salt) %>
-  password_salt: <%= salt %>
-  created_at: <%= 30.days.ago %>
