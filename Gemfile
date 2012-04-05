@@ -12,3 +12,7 @@ gem 'yaml_db'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'rdiscount'
 gem 'jquery-rails'
+
+group :development do
+  gem 'rspec-rails', '2.9.0'
+end
