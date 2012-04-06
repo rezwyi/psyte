@@ -595,14 +595,18 @@ a.button:hover {
   list-style-type: none;
 }
 
-.icon-twitter {
-  background: url("/images/twitter.png") no-repeat scroll left 50% transparent;
-  padding: 1px 0 1px 20px;
-  margin: 0 0 0 10px;
+.addthis_bar {
+  background-image: none;
+  background-color: #655f63;
+  font-family: Serif, Helvetica, Arial, sans-serif;
+  font-size: 16px !important;
+  left: -271px;
 }
 
-.icon-flickr {
-  background: url("/images/flickr.png") no-repeat scroll left 50% transparent;
-  padding: 1px 0 1px 20px;
-  margin: 0 0 0 10px;
+.addthis_bar.addthis_bar_medium .at-floatingbar-share {
+  width: 570px;
+}
+
+.addthis_bar.addthis_bar_medium .at-floatingbar-close {
+  display: none;
 }

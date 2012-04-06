@@ -68,6 +68,9 @@ ru:
     feed:
       description: 'Лента сообщений блога'
 
+    show:
+      share: 'Пожалуйста, поделись ссылкой с друзьями:'
+
   sessions:
     form:
       login: 'Логин'
