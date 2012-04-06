@@ -9,12 +9,7 @@
       <div id="content">
         <div id="content-elements">
           <%= yield %>
-
-          <% unless yield(:comments).blank? %>
-            <div id="comments"><%= yield :comments %></div>
-          <% end %>
         </div>
-
       </div>
 
       <% unless yield(:pagination).blank? %>

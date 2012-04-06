@@ -259,11 +259,6 @@ nav.pagination span.gap {
   background-color: #f6f2ef;
 }
 
-#disqus_thread {
-  border-top: 1px dashed #bdafac;
-  margin: 30px 0 0 0;
-}
-
 .right {
   float: right;
 }
@@ -397,7 +392,7 @@ nav.pagination span.gap {
   margin: 30px 0 30px 30px;
 }
 
-.post-content a, .post-comments a, #wmd-preview a, #footer a, #disqus_thread a,
+.post-content a, .post-comments a, #wmd-preview a, #footer a, 
 .project-links a, .about a, .activity a {
   color: #655fc8;
 }
