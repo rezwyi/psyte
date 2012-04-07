@@ -2,11 +2,9 @@
 
 <% content_for :javascripts do %>
   <script type="text/javascript">
-    var addthis_config = {
-        bar_show_below : 150
-    }
+    var addthis_config = { bar_show_below : 150 }
+    $.getScript('http://s7.addthis.com/js/300/addthis_widget.js')
   </script>
-  <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js"></script>
 <% end %>
 
 <div class="addthis_bar addthis_bar_medium">

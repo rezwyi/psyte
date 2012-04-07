@@ -12,9 +12,7 @@
         </div>
       </div>
 
-      <% unless yield(:pagination).blank? %>
-        <%= yield :pagination %>
-      <% end %>
+      <%= yield :pagination if yield(:pagination) %>
 
       <%= render :partial => 'shared/footer' %>
     </div>

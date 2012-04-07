@@ -596,6 +596,8 @@ a.button:hover {
 }
 
 .addthis_bar {
+  position: fixed;
+  top: -300px;
   background-image: none;
   background-color: #655f63;
   font-family: Serif, Helvetica, Arial, sans-serif;
