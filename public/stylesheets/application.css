@@ -556,6 +556,8 @@ a.button:hover {
 
 .avatar img {
   position: absolute;
+  box-shadow: 0px 0px 5px #655F63;
+  -webkit-box-shadow: 0px 0px 5px #655F63;
 }
 
 .about-info {
