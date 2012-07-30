@@ -1,6 +1,7 @@
 <div id="header">
   <div id="logo">
     <%= link_to_unless current_page?(root_url), 'Rezvanov<span>.info</span>'.html_safe, root_url %>
+    <%= last_tweet(@last_tweet) %>
   </div>
 
   <% unless current_user %>

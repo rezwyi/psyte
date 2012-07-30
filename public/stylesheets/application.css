@@ -74,6 +74,23 @@ blockquote {
   text-decoration: none;
 }
 
+#logo .last-tweet {
+  background: url('/images/twitter.ico') no-repeat scroll left 50% transparent;
+  font-size: 0.35em;
+  font-weight: normal;
+  font-style: italic;
+  padding: 0 0 0 20px;
+  margin: 0 0 0 30px;
+}
+
+#logo .last-tweet a {
+  color: #655fc8;
+}
+
+#logo .last-tweet a:hover {
+  text-decoration: underline;
+}
+
 #desc {
   font-size: 0.6em;
   font-style: italic;
