@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
 
   has_friendly_id :ascii_title, :use_slug => true
 
-  validates :user_id, :title, :published_at, :markdown, :presence => true
+  validates :title, :published_at, :markdown, :presence => true
   validates :title, :uniqueness => true
 
   before_save :save_html
