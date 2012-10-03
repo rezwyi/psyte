@@ -13,7 +13,6 @@ gem 'yaml_db'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'rdiscount'
 gem 'jquery-rails'
-gem 'twitter_for_rails', :git => 'http://github.com/rezwyi/twitter_for_rails.git'
 
 group :development do
   gem 'rspec-rails', '2.9.0'
