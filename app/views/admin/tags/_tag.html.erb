@@ -3,5 +3,10 @@
   <td><%= tag.name %></td>
   <td><%= tag.created_at.strftime(t('date.formats.datetime')) %></td>
   <td><%= link_to t('common.edit'), edit_admin_tag_path(tag) %></td>
-  <td><%= button_to t('common.destroy'), admin_tag_path(tag), :method => :delete, :class => 'button' %></td>
+  <td>
+    <%= button_to t('common.destroy'), admin_tag_path(tag),
+                 :method => :delete,
+                 :confirm => t(:really?),
+                 :class => 'button' %>
+  </td>
 </tr>

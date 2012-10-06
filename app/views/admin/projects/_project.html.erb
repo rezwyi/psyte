@@ -3,5 +3,10 @@
   <td><%= project.title %></td>
   <td><%= project.created_at.strftime(t('date.formats.datetime')) %></td>
   <td><%= link_to t('common.edit'), edit_admin_project_path(project) %></td>
-  <td><%= button_to t('common.destroy'), admin_project_path(project), :method => :delete, :class => 'button' %></td>
+  <td>
+    <%= button_to t('common.destroy'), admin_project_path(project),
+                  :method => :delete,
+                  :confirm => t(:really?),
+                  :class => 'button' %>
+  </td>
 </tr>

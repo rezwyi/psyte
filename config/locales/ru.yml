@@ -3,6 +3,7 @@ ru:
   welcome: 'Добро пожаловать!'
   copyright: '©'
   twitter: '@rezwyi'
+  really?: 'Ты точно уверен?'
 
   date:
     formats:
