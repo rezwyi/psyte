@@ -52,11 +52,13 @@ ru:
   shared:
     header:
       home: 'Главная'
+      login: 'Вход'
+
+    manage_menu:
       new_post: 'статью'
       or: 'или'
       new_project: 'проект'
       admin: 'Управление'
-      login: 'Вход'
       logout: 'Выход'
 
   posts:

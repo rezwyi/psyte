@@ -1,6 +1,9 @@
 class Project < ActiveRecord::Base
   mount_uploader :screenshot, ScreenshotUploader
 
+  attr_accessible :title, :description, :screenshot, :production_url,
+                  :source_url
+
   validates :title, :description, :presence => true
 
   has_friendly_id :ascii_title, :use_slug => true

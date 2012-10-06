@@ -1,4 +1,8 @@
-/* Color palette from http://www.colourlovers.com/palette/1533081/grey */
+/*
+ *= require zenburn
+ *= require_self
+ */
+
 body {
   font-family: Trebuchet MS;
   font-size: 1.6em;
@@ -75,7 +79,7 @@ blockquote {
 }
 
 #logo .last-tweet {
-  background: url('/images/twitter.ico') no-repeat scroll left 50% transparent;
+  background: url('/assets/twitter.ico') no-repeat scroll left 50% transparent;
   font-size: 0.35em;
   font-weight: normal;
   font-style: italic;
@@ -112,7 +116,7 @@ blockquote {
 }
 
 #manage-menu li {
-  background: url("/images/nav.png") no-repeat scroll right 50% transparent;
+  background: url('/assets/nav.png') no-repeat scroll right 50% transparent;
   color: #fff;
   display: inline;
   list-style-type: none;
@@ -144,7 +148,7 @@ blockquote {
 }
 
 #pages-menu li {
-  background: url("/images/nav2.png") no-repeat scroll right 50% transparent;
+  background: url('/assets/nav2.png') no-repeat scroll right 50% transparent;
   color: #fff;
   display: inline;
   list-style-type: none;

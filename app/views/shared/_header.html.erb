@@ -7,26 +7,13 @@
     <%= link_to t('.login'), login_path, :id => 'login-link' %>
 
     <div id="login-form-modal">
-      <%= render :partial => 'sessions/form', :locals => { :remote => true } %>
+      <%= render :partial => 'sessions/form', :locals => {:remote => true} %>
     </div>
   <% end %>
 
-  <div id="manage-menu" <%= "style='display:none'" unless current_user %>>
-    <ul>
-      <li class="first">
-        <%= t('common.add') %>
-        <%= link_to_unless current_page?(new_admin_post_path), t('.new_post'), new_admin_post_path %>
-        <%= t('.or') %>
-        <%= link_to_unless current_page?(new_admin_project_path), t('.new_project'), new_admin_project_path %>
-      </li>
-      <li>
-        <%= link_to_unless current_page?(admin_posts_path), t('.admin'), admin_posts_path %>
-      </li>
-      <li class="last">
-        <%= link_to_unless current_page?(logout_path), t('.logout'), logout_path %>
-      </li>
-    </ul>
-  </div>
+  <% if current_user %>
+    <%= render :partial => 'shared/manage_menu' %>
+  <% end %>
   
   <div id="pages-menu">
     <ul>
