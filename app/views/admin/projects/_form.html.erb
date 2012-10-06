@@ -7,8 +7,11 @@
   </div>
 
   <div class="form-top-right">
-    <p><%= form.label :image_url, t('.image_url') %></p>
-    <p><%= form.text_field :image_url %></p>
+    <p><%= form.label :screenshot, t('.screenshot') %></p>
+    <% if @project.screenshot.present? %>
+      <%= image_tag @project.screenshot.thumb.url %>
+    <% end %>
+    <p><%= form.file_field :screenshot %></p>
     <br/>
     <p><%= form.label :production_url, t('.production_url') %></p>
     <p><%= form.text_field :production_url %></p>

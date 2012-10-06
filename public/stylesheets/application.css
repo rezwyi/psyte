@@ -361,7 +361,8 @@ nav.pagination span.gap {
   margin: 0 0 70px 0;
 }
 
-.post h1 {
+.post h1,
+.project-info h1 {
   font-size: 1.5em;
   margin: 0 0 10px 0;
 }
@@ -388,7 +389,8 @@ nav.pagination span.gap {
   margin: 20px 0 70px 0;
 }
 
-.read-more a {
+.read-more a,
+.project-thumbnails .caption a {
   font-size: 0.6em; 
   font-weight: bold;
   color:#fff;
@@ -398,8 +400,8 @@ nav.pagination span.gap {
   padding: 10px;
 }
 
-.read-more a:hover {
-  background-color: #726d74;
+.read-more a:hover,
+.project-thumbnails .caption a:hover {
   background-color: #2f96b4;
   text-decoration: none;
 }
@@ -563,25 +565,38 @@ a.button:hover {
   border: 1px solid red;
 }
 
-.project {
-  margin: 0 0 60px 0;
-  min-height: 240px;
+.project-thumbnails {
+  list-style-type: none;
 }
 
-.project-thumb {
-  position: absolute;
+.project-thumbnails li {
+  display: block;
+  float: left;
+  width: 274px;
+  margin-left: 8px;
 }
 
-.project-info {
-  margin: 0 0 0 270px;
+.project-thumbnails li:first-child {
+  margin-left: 0;
 }
 
-.project-info h1 {
+.project-thumbnails .project {
+  display: block;
+  min-height: 437px;
+  padding: 5px;
+  border: 1px dashed #bdafac;
+  border-radius: 5px;
+  margin: 0 0 20px 0;
+}
+
+.project-thumbnails .project .caption {
+  padding: 10px;
   margin: 0 0 15px 0;
 }
 
-.project-info p {
-  font-size: 0.7em;
+.project-thumbnails .project .caption h3,
+.project-thumbnails .project .caption p {
+  font-size: 0.6em;
   margin: 0 0 15px 0;
 }
 

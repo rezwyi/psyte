@@ -106,6 +106,6 @@ ru:
     projects:
       form:
         description: 'Описание'
-        image_url: 'Ссылка на картинку проекта'
+        screenshot: 'Картинка проекта'
         production_url: 'Ссылка на сайт проекта'
         source_url: 'Ссылка на исходники проекта'

@@ -11,7 +11,7 @@ Psyte::Application.routes.draw do
   resources :tags, :only => [ :index, :show ] do
     get 'feed', :on => :member, :format => :rss
   end
-  resources :projects, :only => [ :index, :show ] do
+  resources :projects, :only => :index do
     get 'feed', :on => :collection, :format => :rss
   end
 

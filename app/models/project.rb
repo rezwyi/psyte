@@ -1,5 +1,8 @@
 class Project < ActiveRecord::Base
-  validates_presence_of :title, :description, :image_url
+  mount_uploader :screenshot, ScreenshotUploader
+
+  validates :title, :description, :presence => true
+
   has_friendly_id :ascii_title, :use_slug => true
 
   scope :active, lambda { where('created_at is not null').order('id desc') }

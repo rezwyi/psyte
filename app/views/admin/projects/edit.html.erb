@@ -1,7 +1,7 @@
 <% content_for :title, title("#{t('head.title.edit')} '#{@project.title}'")  %>
 
 <div class="form">
-  <%= form_for [ :admin, @project ] do |form| %>
+  <%= form_for [:admin, @project], :html => {:multipart => true} do |form| %>
     <%= render :partial => 'form', :locals => { :form => form } %>
 
     <div class="form-buttons">
