@@ -10,3 +10,4 @@ tmp/**/*
 vendor/bundle
 .DS_Store
 *.sublime-*
+public/uploads
