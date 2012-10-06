@@ -15,6 +15,7 @@ gem 'rdiscount'
 gem 'jquery-rails'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'role-rails'
 
 group :development do
   gem 'rspec-rails', '2.9.0'
