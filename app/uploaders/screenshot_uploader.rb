@@ -13,6 +13,6 @@ class ScreenshotUploader < CarrierWave::Uploader::Base
 
   # File versions
   version :thumb do
-    process :resize_to_fill => [262,200]
+    process :resize_to_fit => [262,200]
   end
 end
