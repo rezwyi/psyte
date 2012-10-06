@@ -21,12 +21,11 @@ class Post < ActiveRecord::Base
   paginates_per 7
 
   def tag_names=(names)
-    self.tags = Tag.with_names(names.split(/\s+/))
+    self.tags = Tag.with_names(names.strip.try(:split, ' '))
   end
 
   def tag_names
-    tag_names = tags.map(&:name).join(' ')
-    tag_names += ' ' unless tag_names.blank?
+    tags.map(&:name).join(' ')
   end
 
   protected
