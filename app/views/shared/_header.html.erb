@@ -4,11 +4,8 @@
   </div>
 
   <% unless current_user %>
-    <%= link_to t('.login'), login_path, :id => 'login-link' %>
-
-    <div id="login-form-modal">
-      <%= render :partial => 'sessions/form', :locals => {:remote => true} %>
-    </div>
+    <%= link_to t('.login'), login_path, :id => 'login-link',
+               :role => 'login' %>
   <% end %>
 
   <% if current_user %>

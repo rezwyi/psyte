@@ -3,6 +3,13 @@
   <%= render :partial => 'shared/head' %>
 
   <body>
+    <% unless current_user %>
+      <div id="login-modal-bg" role="modal-killer"></div>
+      <div id="login-form-modal" role="login-modal">
+        <%= render :partial => 'sessions/form', :locals => {:remote => true} %>
+      </div>
+    <% end %>
+
     <div id="wrapper">
       <%= render :partial => 'shared/header' %>
 

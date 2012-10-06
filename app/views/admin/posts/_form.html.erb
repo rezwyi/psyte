@@ -8,12 +8,13 @@
 
   <div class="form-top-right">
     <p><%= form.label :tag_names, t('common.tags') %></p>
-    <p><%= form.text_field :tag_names %></p>
+    <p><%= form.text_field :tag_names, :role => 'tags-collector' %></p>
 
     <% unless @tags.blank? %>
       <div class="tag-links">
         <% @tags.each do |tag| %>
-          <%= link_to tag.name, 'javascript:void(0)'.html_safe, :class => 'tag-link', :onclick => "pasteTagName(\"#{tag.name}\")" %>
+          <%= link_to tag.name, '#', :class => 'tag-link',
+                      :role => 'tag-picker' %>
         <% end %>
       </div>
     <% end %>

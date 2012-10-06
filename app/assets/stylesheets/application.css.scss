@@ -1,8 +1,3 @@
-/*
- *= require zenburn
- *= require_self
- */
-
 body {
   font-family: Trebuchet MS;
   font-size: 1.6em;
@@ -255,10 +250,20 @@ nav.pagination span.gap {
   margin: 5px 0 0 0;
 }
 
+#login-modal-bg {
+  display: none;
+  z-index: 10000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
 #login-form-modal {
   display: none;
   position: absolute;
-  right: 0px;
+  right: 200px;
   top: 25px;
   z-index: 10001;
   background-color: #fff;
