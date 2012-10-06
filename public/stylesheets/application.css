@@ -1,6 +1,6 @@
 /* Color palette from http://www.colourlovers.com/palette/1533081/grey */
 body {
-  font-family: Serif, Helvetica, Arial, sans-serif;
+  font-family: Trebuchet MS;
   font-size: 1.6em;
   color: #655f63;
 }
@@ -160,6 +160,10 @@ blockquote {
 
 #pages-menu li.last {
   background: none;
+}
+
+#pages-menu ul li a {
+  line-height: 34px;
 }
 
 #search {
@@ -358,7 +362,8 @@ nav.pagination span.gap {
 }
 
 .post h1 {
-  margin: 0 0 5px 0;
+  font-size: 1.5em;
+  margin: 0 0 10px 0;
 }
 
 .post h1 a, .project h1 a {
@@ -387,7 +392,7 @@ nav.pagination span.gap {
   font-size: 0.6em; 
   font-weight: bold;
   color:#fff;
-  background-color: #bdafac;
+  background-color: #49afcd;
   border: none;
   border-radius: 5px;
   padding: 10px;
@@ -395,6 +400,7 @@ nav.pagination span.gap {
 
 .read-more a:hover {
   background-color: #726d74;
+  background-color: #2f96b4;
   text-decoration: none;
 }
 
@@ -414,7 +420,7 @@ nav.pagination span.gap {
 
 .post-content a, .post-comments a, #wmd-preview a, #footer a, 
 .project-links a, .about a, .activity a {
-  color: #655fc8;
+  color: #49afcd;
 }
 
 .post-content h2, h3, h4, h5, h6, #wmd-preview h2, h3, h4, h5, h6  {
@@ -431,14 +437,14 @@ nav.pagination span.gap {
 
 .tag-link {
   color:#fff;
-  background-color: #bdafac;
+  background-color: #49afcd;
   border-radius: 5px;
   font-style: normal;
   padding: 0 5px 0 5px;
 }
 
 .tag-link:hover {
-  background-color: #655f63;
+  background-color: #2f96b4;
   text-decoration: none;
 }
 
@@ -461,7 +467,7 @@ nav.pagination span.gap {
   border-bottom: 1px solid #bdafac;
   font-size: 0.7em;
   margin: 30px 0 30px 0;
-  height: 1.54em;
+  height: 1.42em;
   text-align: right;
 }
 
@@ -509,6 +515,7 @@ nav.pagination span.gap {
   overflow: hidden;
   white-space: nowrap;
   padding: 0 5px 0 15px;
+  text-overflow: ellipsis;
 }
 
 .manage-items a {
@@ -517,6 +524,14 @@ nav.pagination span.gap {
 
 .manage-actions {
   margin: 15px 0 15px 0;
+}
+
+.manage-actions a.button {
+  background-color: #5bb75b;
+}
+
+.manage-actions a.button:hover {
+  background-color: #51a351;
 }
 
 .button {
@@ -608,6 +623,7 @@ a.button:hover {
 }
 
 .recently-items ol {
+  font-size: 0.9em;
   margin: 0 0 60px 40px;
 }
 
@@ -633,4 +649,13 @@ a.button:hover {
 
 .addthis_bar.addthis_bar_medium .at-floatingbar-close {
   display: none;
+}
+
+form.button_to input.button {
+  background-color: #da4f49;
+  cursor: pointer;
+}
+
+form.button_to input.button:hover {
+  background-color: #bd362f;
 }

@@ -3,7 +3,7 @@
 
   <div class="post-info">
     <span class="post-pubdate">
-      <%= post.published_at.strftime(t('date.formats.default')) %>
+      <%= Russian::strftime(post.published_at, t('date.formats.default')) %>
     </span>
 
     <% unless post.tags.blank? %>

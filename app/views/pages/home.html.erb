@@ -27,7 +27,11 @@
 
     <ol>
       <% @projects.each do |project| %>
-        <li><%= link_to project.title, project %></li>
+        <li>
+          <%= link_to_if project.production_url.present?, project.title,
+                         project.production_url,
+                         :target => '_blank' %>
+        </li>
       <% end %>
       <li class="last"><%= link_to t('.show_all'), projects_path %></li>
     </ol>

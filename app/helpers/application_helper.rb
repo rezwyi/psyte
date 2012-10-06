@@ -8,6 +8,6 @@ module ApplicationHelper
   end
 
   def current_class(page)
-    " class='current'".html_safe if current_page?(page)
+    " class='current'".html_safe if request.path.starts_with?(page)
   end
 end

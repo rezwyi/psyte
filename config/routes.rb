@@ -3,7 +3,6 @@ Psyte::Application.routes.draw do
 
   match 'login', :to => 'sessions#new'
   match 'logout', :to => 'sessions#destroy'
-  match 'admin', :to => 'admin/posts#index'
 
   resources :sessions
   resources :posts, :only => [ :index, :show ] do
