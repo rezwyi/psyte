@@ -253,8 +253,10 @@ nav.pagination span.gap {
 
 #login-modal-bg {
   display: none;
+  background-color: #111;
+  opacity: 0.8;
   z-index: 10000;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -263,18 +265,19 @@ nav.pagination span.gap {
 
 #login-form-modal {
   display: none;
-  position: absolute;
-  right: 200px;
-  top: 25px;
-  z-index: 10001;
+  position: fixed;
   background-color: #fff;
+  top: 25%;
+  left: 50%;
+  z-index: 10001;
   width: 219px;
   border: 5px solid #bdafac;
-  border-radius: 15px 0 15px 15px;
-  padding: 15px 15px 0px 15px;
-  box-shadow: 5px 5px 5px 0 #655f63;
-  -webkit-box-shadow: 5px 5px 5px 0 #655f63;
-  -moz-box-shadow: 5px 5px 5px 0 #655f63;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 5px 5px 5px 0 #242424;
+  -webkit-box-shadow: 5px 5px 5px 0 #242424;
+  -moz-box-shadow: 5px 5px 5px 0 #242424;
+  padding: 15px 15px 0 15px;
+  margin: 0 0 0 -109px;
 }
 
 #login-form label, #login-form-modal label {
