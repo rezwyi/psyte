@@ -1,11 +1,7 @@
 <% content_for :title, title("#{t('head.title.edit')} '#{@post.title}'")  %>
 
-<% content_for :javascripts do %>
-  <% javascript_include_tag 'showdown', 'wmd' %>
-<% end %>
-
 <div class="form">
-  <%= form_for [ :admin, @post ] do |form| %>
+  <%= form_for [:admin, @post] do |form| %>
     <%= render :partial => 'form', :locals => { :form => form } %>
     <%= render :partial => 'preview', :locals => { :post => @post } %>
     <div class="form-buttons">
