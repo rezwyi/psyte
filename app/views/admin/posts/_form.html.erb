@@ -2,9 +2,12 @@
   <div class="form-top-left">
     <p><%= form.label :title, t('common.title') %></p>
     <p><%= form.text_field :title, :autofocus => true %></p>
+
     <p><%= form.label :published_at, t('common.published_at') %></p>
-    <p><%= form.text_field :published_at, :value => Date.today.to_s,
-                           :role => 'datepicker' %></p>
+    <p>
+      <%= form.text_field :published_at, :value => Date.today.to_s,
+                          :class => 'datepicker', :role => 'datepicker' %>
+    </p>
   </div>
 
   <div class="form-top-right">
