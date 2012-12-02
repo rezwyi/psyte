@@ -17,3 +17,8 @@ $(document).ready ->
     e.preventDefault()
     input = $('@tags-collector')
     input.val [input.val(), $(this).text()].join(' ')
+
+  # Datepickers
+  $('@datepicker').datepicker
+    dateFormat: 'dd/mm/yy'
+  
