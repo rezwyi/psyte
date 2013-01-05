@@ -11,12 +11,12 @@ gem 'rvm-capistrano'
 gem 'kaminari'
 gem 'yaml_db'
 gem 'bcrypt-ruby', :require => 'bcrypt'
-gem 'rdiscount'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'role-rails'
+gem 'redcarpet'
 
 group :development do
   gem 'rspec-rails', '2.9.0'
