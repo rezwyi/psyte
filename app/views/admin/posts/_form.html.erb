@@ -5,8 +5,9 @@
 
     <p><%= form.label :published_at, t('common.published_at') %></p>
     <p>
-      <%= form.text_field :published_at, :value => Date.today.to_s,
-                          :class => 'datepicker', :role => 'datepicker' %>
+      <%= form.text_field :published_at,
+                          value: @post.published_at || Date.today.to_s,
+                          class: 'datepicker', role: 'datepicker' %>
     </p>
   </div>
 
