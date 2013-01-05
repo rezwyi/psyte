@@ -1,3 +1,5 @@
+require 'redcarpet/compat'
+
 class Post < ActiveRecord::Base
   SEPARATOR = '<!--more-->'
 
@@ -41,11 +43,11 @@ class Post < ActiveRecord::Base
   private
 
   def save_html
-    if self.markdown =~ /(?<preface>.*)#{SEPARATOR}(?<content>.*)/im
-      self.preface = RDiscount.new($~[:preface], :filter_html).to_html
-      self.content = RDiscount.new($~[:content], :filter_html).to_html
+    if self.markdown =~ /(?<p>.*)#{SEPARATOR}(?<c>.*)/im
+      self.preface = Markdown.new($~[:p]).to_html
+      self.content = Markdown.new($~[:c]).to_html
     else
-      self.content = RDiscount.new(self.markdown, :filter_html).to_html
+      self.content = Markdown.new(self.markdown).to_html
     end
   end
 end
