@@ -11,3 +11,4 @@ vendor/bundle
 .DS_Store
 *.sublime-*
 public/uploads
+public/system
