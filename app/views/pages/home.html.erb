@@ -6,7 +6,7 @@
   </div>
 
   <div class="about-info">
-    <%= raw @about.body if @about %>
+    <%= raw Snippet.find_by_name(:about).body %>
   </div>
 </div>
 

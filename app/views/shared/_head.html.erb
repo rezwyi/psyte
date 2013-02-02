@@ -1,5 +1,6 @@
 <head>
   <title><%= yield :title %></title>
+  <meta name="description" content="<%= strip_tags Snippet.find_by_name(:about).body %>">
 
   <%= javascript_include_tag :all %>
   <%= stylesheet_link_tag :all %>
