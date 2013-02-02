@@ -2,8 +2,7 @@
 
 <% @projects.each_slice(3) do |ps| %>
   <ul class='project-thumbnails'>
-   <%= render :partial => 'project',
-              :locals => {:projects => ps} %>
+   <%= render :partial => 'project', :locals => {:projects => ps} %>
   </ul>
-  <div class="clear"></div>
 <% end %>
+<div class="clear"></div>

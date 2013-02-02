@@ -75,7 +75,7 @@ blockquote {
 }
 
 #logo .last-tweet {
-  background: url('/assets/twitter.ico') no-repeat scroll left 50% transparent;
+  background: image-url('twitter.ico') no-repeat scroll left 50% transparent;
   font-size: 0.35em;
   font-weight: normal;
   font-style: italic;
@@ -112,7 +112,7 @@ blockquote {
 }
 
 #manage-menu li {
-  background: url('/assets/nav.png') no-repeat scroll right 50% transparent;
+  background: image-url('nav.png') no-repeat scroll right 50% transparent;
   color: #fff;
   display: inline;
   list-style-type: none;
@@ -144,7 +144,7 @@ blockquote {
 }
 
 #pages-menu li {
-  background: url('/assets/nav2.png') no-repeat scroll right 50% transparent;
+  background: image-url('nav2.png') no-repeat scroll right 50% transparent;
   color: #fff;
   display: inline;
   list-style-type: none;
@@ -185,9 +185,10 @@ nav.pagination {
 }
 
 nav.pagination span a {
-  color: #655FC8;
+  color: #49AFCD;
   padding: 0 4px 0 4px;
 }
+
 nav.pagination span.current {
   padding: 0 4px 0 4px;
 }
@@ -592,7 +593,7 @@ a.button:hover {
   display: block;
   float: left;
   width: 274px;
-  margin-left: 8px;
+  margin: 0 0 8px 8px;
 }
 
 .project-thumbnails li:first-child {
@@ -605,7 +606,6 @@ a.button:hover {
   padding: 5px;
   border: 1px dashed #bdafac;
   border-radius: 5px;
-  margin: 0 0 20px 0;
 }
 
 .project-thumbnails .project .caption {
