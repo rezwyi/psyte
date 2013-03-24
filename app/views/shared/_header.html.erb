@@ -14,7 +14,7 @@
   
   <div id="pages-menu">
     <ul>
-      <li class="first">
+      <li>
         <%= link_to_unless current_page?(root_path), t('.home'), root_path %>
       </li>
       <li>
@@ -23,8 +23,14 @@
       <li>
         <%= link_to_unless current_page?(projects_path), t('common.projects'), projects_path %>
       </li>
-      <li class="last">
-        <%= link_to t(:twitter), 'http://twitter.com/rezwyi', :target => 'blank' %>
+      <li>
+        <div class="social-profile-links">
+          <% SETTINGS.social_profiles.each do |k,v| %>
+            <%= link_to v, :title => k.titleize, :target => '_blank' do %>
+              <%= image_tag "#{k}.png"  %>
+            <% end %>
+          <% end %>
+        </div>
       </li>
     </ul>
 

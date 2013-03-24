@@ -2,4 +2,5 @@
  *= require zenburn
  *= require jquery.ui.datepicker
  *= require application
+ *= require_directory ./components
  */

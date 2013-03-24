@@ -1,6 +1,8 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'yaml'
+require 'ostruct'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -8,6 +10,11 @@ if defined?(Bundler)
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
 end
+
+# Global application settings
+SETTINGS = OpenStruct.new(
+  YAML.load File.read(File.expand_path('../settings.yml', __FILE__))
+)
 
 module Psyte
   class Application < Rails::Application

@@ -128,44 +128,6 @@ blockquote {
   background: none;
 }
 
-#pages-menu {
-  background: #655f63;
-  border-radius: 5px;
-  float: left;
-  clear: both;
-  width: 890px;
-  margin: 15px 0 10px 0;
-  padding: 10px 10px 10px 0;
-}
-
-#pages-menu ul {
-  display: inline;
-  margin: 0 0 0 30px;
-}
-
-#pages-menu li {
-  background: image-url('nav2.png') no-repeat scroll right 50% transparent;
-  color: #fff;
-  display: inline;
-  list-style-type: none;
-  font-size: 0.7em;
-  font-weight: bold;
-  margin: 0;
-  padding: 1px 12px 0 14px;
-}
-
-#pages-menu li.first {
-  padding: 1px 12px 0 4px;
-}
-
-#pages-menu li.last {
-  background: none;
-}
-
-#pages-menu ul li a {
-  line-height: 34px;
-}
-
 #search {
   float: right;
 }
