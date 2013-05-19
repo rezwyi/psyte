@@ -17,6 +17,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'role-rails'
 gem 'redcarpet'
+gem 'slim'
 
 group :development do
   gem 'rspec-rails', '2.9.0'
