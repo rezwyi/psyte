@@ -23,15 +23,6 @@
       <li>
         <%= link_to_unless current_page?(projects_path), t('common.projects'), projects_path %>
       </li>
-      <li>
-        <div class="social-profile-links">
-          <% SETTINGS.social_profiles.each do |k,v| %>
-            <%= link_to v, :title => k.titleize, :target => '_blank' do %>
-              <%= image_tag "#{k}.png"  %>
-            <% end %>
-          <% end %>
-        </div>
-      </li>
     </ul>
 
     <div id="search">
