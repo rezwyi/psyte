@@ -1,6 +1,6 @@
 /*
- *= require zenburn
  *= require jquery.ui.datepicker
- *= require application
+ *= require_directory ./layout
  *= require_directory ./components
+ *= require_directory ./plugins
  */
