@@ -1,0 +1,9 @@
+= form_tag sessions_path, :remote => local_assigns.has_key?(:remote) do
+  p = label_tag :login, t('.login')
+  p = text_field_tag :login, params[:login], :autofocus => true
+  p = label_tag :password, t('.password')
+  p = password_field_tag :password
+
+  .login-form-buttons
+    = submit_tag t('.sign_in'), :class => 'button'
+    = link_to t('common.back'), :back if local_assigns.has_key?(:back)

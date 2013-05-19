@@ -1,0 +1,7 @@
+.form-top
+  .form-top-left
+    p = form.label :name, t('common.name')
+    p = form.text_field :name, :autofocus => true
+
+.form-bottom
+  = form.text_area :body, :id => 'wmd-input'

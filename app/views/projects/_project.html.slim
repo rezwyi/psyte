@@ -1,0 +1,14 @@
+- projects.each do |p|
+  li
+    .project{id='project-#{p.id}'}
+      = image_tag p.screenshot.thumb.url if p.screenshot.present?
+
+      .caption
+        h3 = p.title
+        p = p.description
+
+        - if p.production_url.present?
+          = link_to t('.production_url'), p.production_url, :target => '_blank'
+
+        - if p.source_url.present?
+          = link_to t('.source_url'), p.source_url, :target => '_blank'

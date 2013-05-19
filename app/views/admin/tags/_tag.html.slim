@@ -1,0 +1,8 @@
+tr
+  td = tag.id
+  td = tag.name
+  td = tag.created_at.strftime t('date.formats.datetime')
+  td = link_to t('common.edit'), edit_admin_tag_path(tag)
+  td
+    = button_to t('common.destroy'), admin_tag_path(tag), :method => :delete,
+                :confirm => t(:really?), :class => 'button'

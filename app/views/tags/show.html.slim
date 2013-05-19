@@ -1,0 +1,7 @@
+- content_for :title, title("#{t('head.title.tag')} '#{@tag.name}'")
+
+.tag-posts
+  | #{t('.tag_posts')} <strong>#{@tag.name}</strong> 
+  | (#{t('common.count')} #{@posts.count})
+
+= render @posts

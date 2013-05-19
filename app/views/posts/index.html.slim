@@ -1,0 +1,6 @@
+- content_for :title, title(t('common.posts'))
+
+- content_for :pagination do
+  = render :partial => 'shared/pagination', :locals => {:items => @posts}
+
+= render @posts

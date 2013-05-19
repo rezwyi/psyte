@@ -1,0 +1,22 @@
+.form-top
+  .form-top-left
+    p = form.label :title, t('common.title')
+    p = form.text_field :title, :autofocus => true
+
+    p = form.label :published_at, t('common.published_at')
+    p
+      = form.text_field :published_at,
+                        :value => @post.published_at || Date.today.to_s,
+                        :class => 'datepicker', :role => 'datepicker'
+
+  .form-top-right
+    p = form.label :tag_names, t('common.tags')
+    p = form.text_field :tag_names, :role => 'tags-collector'
+
+    - unless @tags.blank?
+      .tag-links
+        - @tags.each do |tag|
+          = link_to tag.name, '#', :class => 'tag-link', :role => 'tag-picker'
+
+.form-bottom
+  = form.text_area :markdown, :id => 'wmd-input'

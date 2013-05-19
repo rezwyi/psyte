@@ -1,0 +1,19 @@
+- content_for :title, title(@post.title)
+
+- content_for :javascripts do
+  javascript:
+    var addthis_config = {bar_show_below: 150};
+    $.getScript('http://s7.addthis.com/js/300/addthis_widget.js');
+
+.addthis_bar.addthis_bar_medium
+  label = t('.share')
+  .addthis_toolbox.addthis_default_style.addthis_32x32_style
+    - (1..4).each do |i|
+      span
+        a{class='addthis_button_preferred_#{i.to_s}'}
+    span
+      a.addthis_button_compact
+    span
+      a.addthis_counter.addthis_bubble_style
+
+= render @post

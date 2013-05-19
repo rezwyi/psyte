@@ -1,8 +1,0 @@
-<% content_for :title, title(t('common.projects')) %>
-
-<% @projects.each_slice(3) do |ps| %>
-  <ul class='project-thumbnails'>
-   <%= render :partial => 'project', :locals => {:projects => ps} %>
-  </ul>
-<% end %>
-<div class="clear"></div>

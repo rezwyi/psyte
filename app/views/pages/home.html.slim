@@ -1,0 +1,26 @@
+- content_for :title, title(t(:welcome))
+
+.about
+  .avatar = image_tag 'avatar.png'
+
+  .about-info
+    = raw Snippet.find_by_name(:about).body
+
+.activity
+  .recently-items.left
+    h3 = t('.recently_posts')
+
+    ol
+      - @posts.each do |post|
+        li = link_to post.title, post
+      li.last = link_to t('.show_all'), posts_path
+
+  .recently-items.right
+    h3 = t('.recently_projects')
+
+    ol
+      - @projects.each do |project|
+        li
+          = link_to_if project.production_url.present?, project.title,
+                       project.production_url, :target => '_blank'
+      li.last = link_to t('.show_all'), projects_path

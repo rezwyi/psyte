@@ -1,0 +1,26 @@
+doctype html
+html{lang='#{I18n.locale}'}
+  = render :partial => 'shared/head'
+
+  body
+    #wrapper
+      = render :partial => 'shared/header'
+
+      .manage-tabs
+        ul
+          li{class='#{current_class(admin_posts_path)}'}
+            = link_to t('common.posts'), admin_posts_path
+          li{class='#{current_class(admin_projects_path)}'}
+            = link_to t('common.projects'), admin_projects_path
+          li{class='#{current_class(admin_tags_path)}'}
+            = link_to t('common.tags'), admin_tags_path
+          li{class='#{current_class(admin_snippets_path)}'}
+            = link_to t('common.snippets'), admin_snippets_path
+
+      #content
+        #content-elements = yield
+
+      - unless yield(:pagination).blank?
+        = yield :pagination
+
+      = render :partial => 'shared/footer'

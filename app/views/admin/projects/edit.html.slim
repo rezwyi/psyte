@@ -1,0 +1,9 @@
+- content_for :title, title("#{t('head.title.edit')} '#{@project.title}'")
+
+.form
+  = form_for [:admin, @project], :html => {:multipart => true} do |form|
+    = render :partial => 'form', :locals => {:form => form}
+
+    .form-buttons
+      = form.submit t('common.save'), :class => 'button'
+      = link_to t('common.back'), :back

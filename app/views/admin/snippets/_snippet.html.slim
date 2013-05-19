@@ -1,0 +1,8 @@
+tr
+  td = snippet.id
+  td = snippet.name
+  td = snippet.created_at.strftime t('date.formats.datetime')
+  td = link_to t('common.edit'), edit_admin_snippet_path(snippet)
+  td
+    = button_to t('common.destroy'), admin_snippet_path(snippet),
+                :method => :delete, :confirm => t(:really?), :class => 'button'

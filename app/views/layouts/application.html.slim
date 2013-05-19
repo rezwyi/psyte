@@ -1,0 +1,20 @@
+doctype html
+
+html{lang='#{I18n.locale}'}
+  = render :partial => 'shared/head'
+
+  body
+    - unless current_user
+      #login-modal-bg{role='modal-killer'}
+      #login-form-modal{role='login-modal'}
+        = render :partial => 'sessions/form', :locals => {:remote => true}
+
+    #wrapper
+      = render :partial => 'shared/header'
+
+      #content
+        #content-elements = yield
+
+      = yield :pagination if yield(:pagination)
+
+      = render :partial => 'shared/footer'

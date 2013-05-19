@@ -1,7 +1,0 @@
-<% content_for :title, title(t('common.search')) %>
-
-<div class="search-posts">
-  <%= t('.search_posts') + ' ' %>"<b><%= params[:query] %></b>" (<%= t('common.count') + ' ' + @posts.count.to_s %>)
-</div>
-
-<%= render @posts %>

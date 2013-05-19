@@ -1,0 +1,7 @@
+- content_for :title, title(t('common.search'))
+
+.search-posts
+  | #{t('.search_posts')} <strong>#{params[:query]}</strong> 
+  | (#{t('common.count')} #{@posts.count})
+
+= render @posts
