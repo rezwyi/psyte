@@ -2,9 +2,10 @@ ru:
   title: 'Rezvanov.info'
   welcome: 'Добро пожаловать!'
   copyright: '©'
-  twitter: '@rezwyi'
   really?: 'Ты точно уверен?'
-
+  about: Проектирование, разработка и поддержка веб-сайтов и веб-приложений.
+         Разработка на ruby on rails с использованием tdd или bdd. А также аудит
+         и консультирование по вопросам производительности веб-приложений.
   date:
     formats:
       date: '%d/%m/%Y'
@@ -78,14 +79,6 @@ ru:
       password: 'Пароль'
       sign_in: 'Войти'
 
-  tags:
-    show:
-      tag_posts: 'Список статей с тэгом'
-
-  searches:
-    index:
-      search_posts: 'Результат поиска статей по фразе'
-
   projects:
     project:
       production_url: 'Сайт проекта'
@@ -93,9 +86,8 @@ ru:
 
   pages:
     home:
-      recently_posts: 'Последнее из блога...'
-      recently_projects: 'Мои проекты...'
-      show_all: 'Показать все »'
+      posts: 'Блог'
+      projects: 'Проекты'
 
   views:
     pagination:

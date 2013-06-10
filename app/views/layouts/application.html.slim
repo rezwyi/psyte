@@ -1,20 +1,37 @@
 doctype html
 
 html{lang='#{I18n.locale}'}
-  = render :partial => 'shared/head'
+  head
+    title = yield(:title)
+    
+    link{rel='shortcut icon' href='/favicon.ico'}
+    link{href='http://fonts.googleapis.com/css?family=Allura' rel='stylesheet' type='text/css'}
+
+    = javascript_include_tag :application
+    = stylesheet_link_tag :application
+    = csrf_meta_tag
+
+    javascript:
+      hljs.initHighlightingOnLoad();
+
+    = yield :head
 
   body
-    - unless current_user
-      #login-modal-bg{role='modal-killer'}
-      #login-form-modal{role='login-modal'}
-        = render :partial => 'sessions/form', :locals => {:remote => true}
+    .layout
+      .logo
+         = link_to 'Rezvanov<span>.info</span>'.html_safe, root_path
 
-    #wrapper
-      = render :partial => 'shared/header'
-
-      #content
-        #content-elements = yield
-
-      = yield :pagination if yield(:pagination)
-
-      = render :partial => 'shared/footer'
+      .content
+        .about
+          = raw t(:about)
+        
+        = yield
+         
+      .footer
+        = link_to 'http://creativecommons.org/licenses/by-sa/3.0/',
+                  :target => '_blank' do
+          = image_tag 'http://i.creativecommons.org/l/by-sa/3.0/80x15.png',
+                      :alt => 'Creative Commons License'
+        | &nbsp;
+        .copyright
+          = "#{t(:copyright)} #{copyright_years}"

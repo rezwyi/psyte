@@ -13,14 +13,13 @@ gem 'yaml_db'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'carrierwave'
-gem 'rmagick'
 gem 'role-rails'
 gem 'redcarpet'
 gem 'slim'
 
-group :development do
+group :development, :test do
   gem 'rspec-rails', '2.9.0'
+  gem 'fabrication'
 end
 
 group :assets do

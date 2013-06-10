@@ -1,8 +1,0 @@
-tr
-  td = post.id
-  td = post.title
-  td = post.created_at.strftime t('date.formats.datetime')
-  td = link_to t('common.edit'), edit_admin_post_path(post)
-  td
-    = button_to t('common.destroy'), admin_post_path(post), :method => :delete,
-                :confirm => t(:really?), :class => 'button'

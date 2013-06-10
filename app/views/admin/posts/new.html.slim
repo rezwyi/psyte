@@ -1,9 +1,0 @@
-- content_for :title, title(t('head.title.new_post'))
-
-.form
-  = form_for [:admin, @post] do |form|
-    = render :partial => 'form', :locals => {:form => form}
-    = render :partial => 'preview', :locals => {:post => @post}
-    .form-buttons
-      = form.submit t('common.add'), :class => 'button'
-      = link_to t('common.back'), :back

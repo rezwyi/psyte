@@ -65,5 +65,11 @@ module Psyte
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Global markdown renderer
+    config.md_renderer = Redcarpet::Markdown.new(
+      Redcarpet::Render::HTML.new(:filter_html => true),
+      :autolink => true
+    )
   end
 end

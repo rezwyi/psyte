@@ -1,8 +1,0 @@
-- content_for :title, title("#{t('head.title.edit')} '#{@snippet.name}'")
-
-.form
-  = form_for [ :admin, @snippet ] do |form|
-    = render :partial => 'form', :locals => {:form => form}
-    .form-buttons
-      = form.submit t('common.save'), :class => 'button'
-      = link_to t('common.back'), :back

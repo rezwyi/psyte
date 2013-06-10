@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-  private
+  protected
 
   def current_user
     return unless session[:user_id]

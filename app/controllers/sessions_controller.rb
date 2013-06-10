@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    #prevent session fixation
     reset_session
 
     user = User.authenticate(params[:login], params[:password])
@@ -17,7 +16,7 @@ class SessionsController < ApplicationController
         format.js
       end
     else
-      render 'new'
+      render :new
     end
   end
 

@@ -1,6 +1,7 @@
 /*
  *= require jquery.ui.datepicker
- *= require_directory ./layout
+ *= require ./layouts/application
  *= require_directory ./components
  *= require_directory ./plugins
+ *= require_directory ./pages
  */

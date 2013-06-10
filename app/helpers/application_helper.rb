@@ -8,6 +8,10 @@ module ApplicationHelper
   end
 
   def current_class(page)
-    " class='current'".html_safe if request.path.starts_with?(page)
+    'current' if request.path.starts_with?(page)
+  end
+
+  def render_markdown(markdown)
+  	Rails.application.config.md_renderer.render(markdown).html_safe
   end
 end

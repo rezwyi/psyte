@@ -1,34 +1,10 @@
-.post{id='post-#{post.id}'}
-  h1 = link_to post.title, post
+.page-post
+  .post
+    h1.title
+      = post.title
+      | &nbsp;
+      .pubdate
+        = Russian::strftime post.published_at, t('date.formats.default')
 
-  .post-info
-    span.post-pubdate
-      = Russian::strftime post.published_at, t('date.formats.default')
-
-    - unless post.tags.blank?
-      span.post-tags
-        |  | 
-        - post.tags.each do |tag|
-          = link_to tag.name, tag, :class => 'tag-link'
-          | &nbsp;
-
-  - unless current_page?(post_path(post))
-    - unless post.preface.blank?
-      .post-preface.post-content
-        = raw post.preface
-      .read-more
-        = link_to t('.read_more'), post
-    - else
-      .post-preface.post-content
-        = raw post.content
-  - else
-    - unless post.preface.blank?
-      .post-preface.post-content
-        = raw post.preface
-      .post-content
-        = raw post.content
-    - else
-      .post-preface.post-content
-        = raw post.preface
-
-.clear
+    .body
+      = render_markdown post.body
