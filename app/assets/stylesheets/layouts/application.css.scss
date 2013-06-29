@@ -7,7 +7,7 @@ body {
 a {
   color: #655f63;
   text-decoration: none;
-  &[role] {
+  &[class*='js'] {
     border-bottom: 1px dashed;
     &:hover {
       border-bottom: none;
