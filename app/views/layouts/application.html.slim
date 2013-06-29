@@ -17,6 +17,8 @@ html{lang='#{I18n.locale}'}
     = yield :head
 
   body
+    = render 'shared/modal'
+    
     .layout
       .logo
          = link_to 'Rezvanov<span>.info</span>'.html_safe, root_path
