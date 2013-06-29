@@ -16,6 +16,7 @@ gem 'jquery-ui-rails'
 gem 'role-rails'
 gem 'redcarpet'
 gem 'slim'
+gem 'flight-for-rails'
 
 group :development, :test do
   gem 'rspec-rails', '2.9.0'
