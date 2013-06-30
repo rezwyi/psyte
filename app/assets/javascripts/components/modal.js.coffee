@@ -15,7 +15,7 @@ $ ->
       	  url: data.url + '.js'
       	  dataType: 'html'
       	.done (data) =>
-      		@select('bodySelector').html $(data)
+      		@select('bodySelector').html $(data).addClass('in-modal')
       		@.$node.show()
 
     @close = (event) ->
