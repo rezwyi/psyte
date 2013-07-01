@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Verdana, tahoma, sans-serif;
+  font-size: 14px;
+  color: #655f63;
+}
+
+input {
+  font-size: 1em;
+  font-family: inherit;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.button {
+  color: #dd4d42;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.layout {
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+  > .content {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+    margin: 50px auto;
+    padding: 20px 40px 40px 40px;
+    > .logo {
+      font-size: 3em;
+      font-family: 'Allura', cursive;
+      font-weight: bold;
+      margin-bottom: 10px;
+      a {
+        text-decoration: none;
+        color: #dd4d42;
+        &:hover{
+          background-color: #fff;
+          color: #dd4d42;
+        }
+      }
+      span {
+        color: #655f63;
+        font-weight: normal;
+        font-size: 0.6em;
+        font-style: italic;  
+      }
+    }
+  }
+}

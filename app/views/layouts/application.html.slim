@@ -19,6 +19,12 @@ html{lang='#{I18n.locale}'}
   body
     = render 'shared/flash', :flash => flash.discard
     = render 'shared/modal'
+
+    .auth
+      - if current_user
+        = button_to t('.logout'), logout_path, :method => :delete
+      - else
+        = link_to t('.login'), login_path, :class => 'js-in-modal', :data => {:title => 'Вход'}
     
     .layout
       .logo
@@ -31,10 +37,5 @@ html{lang='#{I18n.locale}'}
         = yield
          
       .footer
-        = link_to 'http://creativecommons.org/licenses/by-sa/3.0/',
-                  :target => '_blank' do
-          = image_tag 'http://i.creativecommons.org/l/by-sa/3.0/80x15.png',
-                      :alt => 'Creative Commons License'
-        | &nbsp;
         .copyright
           = "#{t(:copyright)} #{copyright_years}"
