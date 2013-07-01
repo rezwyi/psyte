@@ -1,8 +1,8 @@
-- content_for :title, title(t(:welcome))
+- content_for :title, 'Web 2.0'
 
 .page-home
   .items
-    h2.title = t('.projects')
+    h2.title = t('common.projects')
     - @projects.each do |p|
       .item
         = link_to p.production_url, p.production_url, :target => '_blank'
@@ -10,7 +10,7 @@
         = p.description
 
   .items
-    h2.title = t('.posts')
+    h2.title = t('common.posts')
     - @posts.each do |post|
       .item 
         = link_to post.title, post

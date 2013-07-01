@@ -1,0 +1,20 @@
+= link_to t('.new_project'), new_admin_project_path, :class => 'btn btn-success'
+
+table.table
+  thead
+    tr
+      th #
+      th = t('.production_url')
+      th = t('.created_at')
+      th
+  tbody
+    - @projects.each do |p|
+      tr
+        td = p.id
+        td = p.production_url
+        td = Russian::strftime p.created_at, '%d %B %Y'
+        td.actions
+          = link_to t('.edit'), edit_admin_project_path(p.id), :class => 'btn'
+          | &nbsp;
+          = link_to t('.delete'), admin_project_path(p.id), :method => :delete,
+                    :confirm => I18n.t('messages.really?'), :class => 'btn btn-danger'

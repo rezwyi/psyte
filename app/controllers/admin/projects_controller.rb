@@ -1,10 +1,6 @@
 class Admin::ProjectsController < Admin::ApplicationController
   def index
-    @projects = Project.managed.page(params[:page]).per(4)
-  end
-  
-  def show
-    @project = Project.find(params[:id])
+    @projects = Project.managed
   end
 
   def new
@@ -12,11 +8,12 @@ class Admin::ProjectsController < Admin::ApplicationController
   end
 
   def create
-    @project = Project.create(params[:project])
+    @project = Project.new(params[:project])
     if @project.save
+      flash[:notice] = I18n.t('messages.project_created')
       redirect_to admin_projects_path
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -27,14 +24,16 @@ class Admin::ProjectsController < Admin::ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
+      flash[:notice] = I18n.t('messages.project_updated')
       redirect_to admin_projects_path
     else
-      render 'edit'
+      render :edit
     end
   end
 
   def destroy
-    @project = Project.find(params[:id]).destroy
-      redirect_to admin_projects_path
+    Project.find(params[:id]).destroy
+    flash[:notice] = I18n.t('messages.project_deleted')
+    redirect_to admin_projects_path
   end
 end

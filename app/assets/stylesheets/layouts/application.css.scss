@@ -42,7 +42,11 @@ blockquote {
 .auth {
   position: absolute;
   top: 6px;
-  right: 6px;
+  right: 18px;
+  > * {
+    display: inline-block;
+    margin-left: 10px;
+  }
   a {
    font-size: 0.8em; 
   }
