@@ -52,6 +52,16 @@ describe Admin::PostsController do
     end
 
     context 'not successfull' do
+      before { Post.any_instance.stub(:save).and_return(false) }
+
+      it 'should create post' do
+        expect { post(:create, params) }.not_to change(Post, :count)
+      end
+
+      it 'should render new template' do
+        post :create, params
+        response.should render_template(:new)
+      end
     end
   end
 
