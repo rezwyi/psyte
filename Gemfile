@@ -12,15 +12,14 @@ gem 'kaminari'
 gem 'yaml_db'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem 'role-rails'
 gem 'redcarpet'
 gem 'slim'
 gem 'flight-for-rails'
 
 group :development, :test do
-  gem 'rspec-rails', '2.9.0'
+  gem 'rspec-rails'
   gem 'fabrication'
+  gem 'shoulda-matchers'
 end
 
 group :assets do
