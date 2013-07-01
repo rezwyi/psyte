@@ -46,9 +46,9 @@ describe Admin::ProjectsController do
       }.to change(Project, :count).by(1)
     end
 
-    it 'should redirect to projects' do
+    it 'should show flash notice' do
       post :create, params
-      response.should redirect_to(admin_projects_path)
+      flash[:notice].should == I18n.t('messages.project_created')
     end
 
     context 'not successfull' do
@@ -88,6 +88,11 @@ describe Admin::ProjectsController do
       project.reload.description.should == 'New description'
     end
 
+    it 'should show flash notice' do
+      put :update, :id => project.id, :project => {:description => 'New description'}
+      flash[:notice].should == I18n.t('messages.project_updated')
+    end
+
     context 'not successfull' do
       before { Project.any_instance.stub(:save).and_return(false) }
       
@@ -110,6 +115,11 @@ describe Admin::ProjectsController do
     it 'should redirect to projects' do
       delete :destroy, :id => project.id
       response.should redirect_to(admin_projects_path)
+    end
+
+    it 'should show flash notice' do
+      delete :destroy, :id => project.id
+      flash[:notice].should == I18n.t('messages.project_deleted')
     end
   end
 end

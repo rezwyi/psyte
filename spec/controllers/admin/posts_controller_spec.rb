@@ -46,9 +46,9 @@ describe Admin::PostsController do
       }.to change(Post, :count).by(1)
     end
 
-    it 'should redirect to posts' do
+    it 'should show flash notice' do
       post :create, params
-      response.should redirect_to(admin_posts_path)
+      flash[:notice].should == I18n.t('messages.post_created')
     end
 
     context 'not successfull' do
@@ -88,6 +88,11 @@ describe Admin::PostsController do
       blog_post.reload.title.should == 'New title'
     end
 
+    it 'should show flash notice' do
+      put :update, :id => blog_post.id, :post => {:title => 'New title'}
+      flash[:notice].should == I18n.t('messages.post_updated')
+    end
+
     context 'not successfull' do
       before { Post.any_instance.stub(:save).and_return(false) }
       
@@ -115,6 +120,11 @@ describe Admin::PostsController do
     it 'should redirect to posts' do
       delete :destroy, :id => blog_post.id
       response.should redirect_to(admin_posts_path)
+    end
+
+    it 'should show flash notice' do
+      delete :destroy, :id => blog_post.id
+      flash[:notice].should == I18n.t('messages.post_deleted')
     end
   end
 end

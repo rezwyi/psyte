@@ -10,6 +10,7 @@ class Admin::ProjectsController < Admin::ApplicationController
   def create
     @project = Project.new(params[:project])
     if @project.save
+      flash[:notice] = I18n.t('messages.project_created')
       redirect_to admin_projects_path
     else
       render :new
@@ -23,6 +24,7 @@ class Admin::ProjectsController < Admin::ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
+      flash[:notice] = I18n.t('messages.project_updated')
       redirect_to admin_projects_path
     else
       render :edit
@@ -31,6 +33,7 @@ class Admin::ProjectsController < Admin::ApplicationController
 
   def destroy
     Project.find(params[:id]).destroy
+    flash[:notice] = I18n.t('messages.project_deleted')
     redirect_to admin_projects_path
   end
 end

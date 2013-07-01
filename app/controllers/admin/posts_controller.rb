@@ -10,6 +10,7 @@ class Admin::PostsController < Admin::ApplicationController
   def create
     @post = Post.new(params[:post])
     if @post.save
+      flash[:notice] = I18n.t('messages.post_created')
       redirect_to admin_posts_path
     else
       render :new
@@ -23,6 +24,7 @@ class Admin::PostsController < Admin::ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
+      flash[:notice] = I18n.t('messages.post_updated')
       redirect_to admin_posts_path
     else
       render :edit
@@ -31,6 +33,7 @@ class Admin::PostsController < Admin::ApplicationController
 
   def destroy
     Post.find(params[:id]).destroy
+    flash[:notice] = I18n.t('messages.post_deleted')
     redirect_to admin_posts_path
   end
 end

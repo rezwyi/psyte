@@ -39,6 +39,12 @@ ru:
     wrong_login_or_password: 'Неправильный логин или пароль'
     welcome: 'Вы успешно вошли на сайт'
     forbidden: 'Доступ запрещен'
+    post_created: 'Публикация создана'
+    post_updated: 'Публикация обновлена'
+    post_deleted: 'Публикация удалена'
+    project_created: 'Проект создан'
+    project_updated: 'Проект обновлен'
+    project_deleted: 'Проект удален'
 
   layouts:
     application:
