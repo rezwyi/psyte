@@ -1,10 +1,9 @@
-.page-post
-  .post
-    h1.title
-      = post.title
-      | &nbsp;
-      .pubdate
-        = Russian::strftime post.published_at, t('date.formats.default')
+.post
+  h1.title
+    = post.title
+    | &nbsp;
+    .pubdate
+      = Russian::strftime post.published_at, t('date.formats.default')
 
-    .body
-      = render_markdown post.body
+  .body
+    = render_markdown post.body

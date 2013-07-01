@@ -1,11 +1,8 @@
 ru:
-  title: 'Rezvanov.info'
-  welcome: 'Добро пожаловать!'
-  copyright: '©'
-  really?: 'Ты точно уверен?'
   about: Проектирование, разработка и поддержка веб-сайтов и веб-приложений.
          Разработка на ruby on rails с использованием tdd или bdd. А также аудит
          и консультирование по вопросам производительности веб-приложений.
+  
   date:
     formats:
       date: '%d/%m/%Y'
@@ -17,18 +14,44 @@ ru:
       - :month
       - :year
 
+  activerecord:
+    attributes:
+      post:
+        title: 'Заголовок'
+        published_at: 'Дата публикации'
+        body: 'Текст публикации'
+
+      project:
+        production_url: 'Ссылка'
+        description: 'Описание'
+
   common:
     back: 'Назад'
     posts: 'Блог'
     projects: 'Проекты'
+    cms: 'Админка'
+    logout: 'Выход'
+
+  messages:
+    really?: 'Ты точно уверен?'
+    wrong_login_or_password: 'Неправильный логин или пароль'
+    welcome: 'Вы успешно вошли на сайт'
+    forbidden: 'Доступ запрещен'
+    post_created: 'Публикация создана'
+    post_updated: 'Публикация обновлена'
+    post_deleted: 'Публикация удалена'
+    project_created: 'Проект создан'
+    project_updated: 'Проект обновлен'
+    project_deleted: 'Проект удален'
 
   layouts:
     application:
       login: 'Скажи пароль!'
-      logout: 'Выход'
 
-  head:
-    title:
+    admin:
+      home: 'На главную'
+
+    login:
       login: 'Вход'
 
   sessions:
@@ -37,16 +60,31 @@ ru:
       password: 'Пароль'
       sign_in: 'Войти'
 
-  projects:
-    project:
-      production_url: 'Сайт проекта'
-      source_url: 'Исходники'
+  admin:
+    posts:
+      index:
+        new_post: 'Новая публикация'
+        title: 'Заголовок'
+        created_at: 'Дата добавления'
+        edit: 'Редактировать'
+        delete: 'Удалить'
 
-  pages:
-    home:
-      posts: 'Блог'
-      projects: 'Проекты'
-  
-  messages:
-    wrong_login_or_password: 'Неправильный логин или пароль'
-    welcome: 'Вы успешно вошли на сайт'
+      form:
+        new: 'Добавление публикации'
+        edit: 'Редактирование публикации'
+        save: 'Сохранить'
+        cancel: 'Отмена'
+
+    projects:
+      index:
+        new_project: 'Новый проект'
+        production_url: 'Ссылка'
+        created_at: 'Дата добавления'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+
+      form:
+        new: 'Добавление проекта'
+        edit: 'Редактирование проекта'
+        save: 'Сохранить'
+        cancel: 'Отмена'

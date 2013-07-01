@@ -1,40 +1,39 @@
 class Admin::PostsController < Admin::ApplicationController
   def index
-    @posts = Post.managed.page(params[:page]).per(4)
+    @posts = Post.managed
   end
 
   def new
     @post = Post.new
-    @tags = Tag.all
   end
 
   def create
-    @post = Post.create(params[:post])
+    @post = Post.new(params[:post])
     if @post.save
+      flash[:notice] = I18n.t('messages.post_created')
       redirect_to admin_posts_path
     else
-      @tags = Tag.all
-      render 'new'
+      render :new
     end
   end
 
   def edit
     @post = Post.find(params[:id])
-    @tags = Tag.all
   end
 
   def update
     @post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
+      flash[:notice] = I18n.t('messages.post_updated')
       redirect_to admin_posts_path
     else
-      @tags = Tag.all
-      render 'edit'
+      render :edit
     end
   end
 
   def destroy
-    @post = Post.find(params[:id]).destroy
-      redirect_to admin_posts_path
+    Post.find(params[:id]).destroy
+    flash[:notice] = I18n.t('messages.post_deleted')
+    redirect_to admin_posts_path
   end
 end

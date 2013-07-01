@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'redcarpet'
 gem 'slim'
 gem 'flight-for-rails'
+gem 'bootstrap-sass', '~> 2.3.2.0'
 
 group :development, :test do
   gem 'rspec-rails'

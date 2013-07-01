@@ -2,7 +2,7 @@ doctype html
 
 html{lang='#{I18n.locale}'}
   head
-    title = yield(:title)
+    title #{yield(:title)} - Rezvanov.info
     
     link{rel='shortcut icon' href='/favicon.ico'}
     link{href='http://fonts.googleapis.com/css?family=Allura' rel='stylesheet' type='text/css'}
@@ -22,7 +22,8 @@ html{lang='#{I18n.locale}'}
 
     .auth
       - if current_user
-        = button_to t('.logout'), logout_path, :method => :delete
+        = link_to t('common.cms'), admin_posts_path
+        = link_to t('common.logout'), logout_path, :method => :delete
       - else
         = link_to t('.login'), login_path, :class => 'js-in-modal', :data => {:title => 'Вход'}
     
@@ -38,4 +39,4 @@ html{lang='#{I18n.locale}'}
          
       .footer
         .copyright
-          = "#{t(:copyright)} #{copyright_years}"
+          | © #{copyright_years} ॐ मणि पद्मे हूँ

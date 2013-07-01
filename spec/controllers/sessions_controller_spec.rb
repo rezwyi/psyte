@@ -24,7 +24,7 @@ describe SessionsController do
 
     it 'should redirect to root' do
       post :create, params
-      response.should redirect_to(root_path)
+      response.should redirect_to(admin_posts_path)
     end
 
     it 'should show flash notice' do

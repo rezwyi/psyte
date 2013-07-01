@@ -3,8 +3,12 @@ Psyte::Application.routes.draw do
   delete '/logout', :to => 'sessions#destroy'
 
   resources :sessions, :only => :create
-  resources :projects, :except => :index
-  resources :posts, :except => :index
+  resources :posts, :only => :show
+  
+  namespace :admin do
+    resources :posts, :except => :show
+    resources :projects, :except => :show
+  end
 
   root :to => 'pages#home'
 end

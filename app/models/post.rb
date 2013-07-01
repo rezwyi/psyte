@@ -8,13 +8,10 @@ class Post < ActiveRecord::Base
   validates :title, :published_at, :body, :presence => true
   validates :title, :uniqueness => true
 
-  scope :published, -> { where('published_at <= ?', Time.now.utc).order('id desc') }
   scope :managed, -> { order('id desc') }
   scope :recent, -> do
     where('published_at <= ?', Time.now.utc).order('created_at desc')
   end
-
-  paginates_per 7
 
   protected
 
