@@ -17,8 +17,9 @@ gem 'slim'
 gem 'flight-for-rails'
 
 group :development, :test do
-  gem 'rspec-rails', '2.9.0'
+  gem 'rspec-rails'
   gem 'fabrication'
+  gem 'shoulda-matchers'
 end
 
 group :assets do
