@@ -7,6 +7,7 @@ $ ->
 	  	@on 'click',
         modalSelector: (event) ->
           event.preventDefault()
-          @trigger 'uiModalShow', url: $(event.target).attr('href')
+          target = $(event.target)
+          @trigger 'uiModalShow', title: target.data('title'), url: target.attr('href')
 
   Application.attachTo 'body'
