@@ -17,6 +17,7 @@ html{lang='#{I18n.locale}'}
     = yield :head
 
   body
+    = render 'shared/flash', :flash => flash.discard
     = render 'shared/modal'
     
     .layout
