@@ -35,7 +35,7 @@ describe Admin::PostsController do
       {:post => {:title => 't', :published_at => '01/01/2000', :body => 'b'}}
     end
     
-    it 'should response with 200' do
+    it 'should redirect to posts' do
       post :create, params
       response.should redirect_to(admin_posts_path)
     end
@@ -68,7 +68,7 @@ describe Admin::PostsController do
   end
 
   describe '#update' do
-    it 'should response with 200' do
+    it 'should redirect to posts' do
       put :update, :id => blog_post.id, :post => {:title => 'New title'}
       response.should redirect_to(admin_posts_path)
     end
