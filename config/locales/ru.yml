@@ -50,3 +50,4 @@ ru:
   messages:
     wrong_login_or_password: 'Неправильный логин или пароль'
     welcome: 'Вы успешно вошли на сайт'
+    forbidden: 'Доступ запрещен'
