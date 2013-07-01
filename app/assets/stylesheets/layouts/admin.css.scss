@@ -19,6 +19,18 @@
       }
     }
     form {
+      .controls {
+        > .error {
+          color: #b94a48;
+          > input[type="text"], textarea {
+            border-color: #b94a48;
+          }
+          > .explain {
+            font-size: 0.9em;
+            margin-top: -10px;
+          }
+        }
+      }
       .form-actions {
         > * {
           margin-right: 5px;
