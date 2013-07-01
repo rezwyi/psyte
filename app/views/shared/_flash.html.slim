@@ -1,0 +1,7 @@
+- flash.each do |k,v|
+  .component-flash
+    .body{class='#{k}'} = v
+  
+  noscript
+    .component-flash.noscript
+      .body{class='#{k}'} = v

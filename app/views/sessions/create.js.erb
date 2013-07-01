@@ -1,7 +1,0 @@
-var manage_menu = $('<%= j render 'shared/manage_menu' %>');
-
-$('@login, @login-modal, @modal-killer').hide();
-
-manage_menu.css('margin-top', '-30px')
-  .insertAfter('#logo')
-  .animate({marginTop: '0px'});

@@ -1,21 +1,21 @@
 class SessionsController < ApplicationController
-  respond_to :html, :js
+  respond_to :html
+  respond_to :js, :only => :new
+
+  layout 'login'
 
   def new
+    respond_with({})
   end
 
   def create
     reset_session
-
-    user = User.authenticate(params[:login], params[:password])
-    if user
+    if (user = User.authenticate(params[:login], params[:password]))
       session[:user_id] = user.id
-
-      respond_with do |format|
-        format.html { redirect_to root_path }
-        format.js
-      end
+      flash[:notice] = I18n.t('messages.welcome')
+      respond_with({}, :location => root_path)
     else
+      flash[:alert] = I18n.t('messages.wrong_login_or_password')
       render :new
     end
   end
