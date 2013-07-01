@@ -22,7 +22,7 @@ html{lang='#{I18n.locale}'}
 
     .auth
       - if current_user
-        = button_to t('.logout'), logout_path, :method => :delete
+        = link_to t('common.logout'), logout_path, :method => :delete
       - else
         = link_to t('.login'), login_path, :class => 'js-in-modal', :data => {:title => 'Вход'}
     
