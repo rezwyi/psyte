@@ -1,0 +1,32 @@
+@import "bootstrap";
+
+.layout {
+  .navbar-inner {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #d4d4d4;
+    .navbar-link {
+      margin-left: 8px;
+    }
+  }
+  > .content {
+    margin: 30px 0 0 20px;
+    table {
+      margin-top: 30px;
+      .actions {
+        white-space: nowrap;
+        text-align: right;
+      }
+    }
+    form {
+      .form-actions {
+        > * {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  > .footer {
+    margin: 20px 0 20px 20px;
+  }
+}
