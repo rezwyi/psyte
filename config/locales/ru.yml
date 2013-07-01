@@ -23,6 +23,10 @@ ru:
         published_at: 'Дата публикации'
         body: 'Текст публикации'
 
+      project:
+        production_url: 'Ссылка'
+        description: 'Описание'
+
   common:
     back: 'Назад'
     posts: 'Блог'
@@ -54,13 +58,26 @@ ru:
       index:
         new_post: 'Новая публикация'
         title: 'Заголовок'
-        created_at: 'Создана'
+        created_at: 'Дата добавления'
         edit: 'Редактировать'
         delete: 'Удалить'
 
       form:
-        new: 'Создание публикации'
+        new: 'Добавление публикации'
         edit: 'Редактирование публикации'
         save: 'Сохранить'
-        preview: 'Просмотр'
+        cancel: 'Отмена'
+
+    projects:
+      index:
+        new_project: 'Новый проект'
+        production_url: 'Ссылка'
+        created_at: 'Дата добавления'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+
+      form:
+        new: 'Добавление проекта'
+        edit: 'Редактирование проекта'
+        save: 'Сохранить'
         cancel: 'Отмена'

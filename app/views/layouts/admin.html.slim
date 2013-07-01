@@ -27,6 +27,8 @@ body
             ul.nav
               li{class='#{'active' if request.path.starts_with?(admin_posts_path)}'}
                 = link_to t('common.posts'), admin_posts_path
+              li{class='#{'active' if request.path.starts_with?(admin_projects_path)}'}
+                = link_to t('common.projects'), admin_projects_path
 
     .content.container-fluid
       .row-fluid

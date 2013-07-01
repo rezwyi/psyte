@@ -7,6 +7,7 @@ Psyte::Application.routes.draw do
   
   namespace :admin do
     resources :posts, :except => :show
+    resources :projects, :except => :show
   end
 
   root :to => 'pages#home'
