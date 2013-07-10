@@ -11,6 +11,22 @@ html{lang='#{I18n.locale}'}
     = stylesheet_link_tag :application
     = csrf_meta_tag
 
+    - if Rails.env.production?
+      javascript:
+        var root = (typeof exports !== 'undefined' && exports !== null) ? exports : this;
+        root._gaq = [['_setAccount', 'UA-24462942-3'], ['_trackPageview']];
+
+        (function() {
+          var ga = document.createElement('script'),
+              proto = document.location.protocol,
+              s = document.getElementsByTagName('script');
+          
+          ga.type = 'text/javascript';
+          ga.async = true;
+          proto = (proto === 'https:') ? 'https://ssl' : 'http://www';
+          ga.src = proto + '.google-analytics.com/ga.js';
+          s[0].parentNode.insertBefore(ga, s);
+        })();
 
     = yield :head
 
