@@ -4,6 +4,8 @@ $ ->
       modalSelector: '.js-in-modal'
   	
   	@after 'initialize', ->
+      hljs.initHighlightingOnLoad();
+      
       @on 'click',
         modalSelector: (event) ->
           event.preventDefault()
