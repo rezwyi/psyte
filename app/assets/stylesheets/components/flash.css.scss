@@ -1,10 +1,11 @@
 .component-flash {
+  $width: 500px;
   position: fixed;
   font-size: 0.9em;
   top: -1000px;
-  right: 0;
-  left: 0;
+  left: 50%;
   z-index: 9999;
+  margin-left: -$width/2;
   &.noscript {
     top: 5px;
   }
@@ -14,7 +15,7 @@
     border: none;
     border-radius: 6px;
     color: #fff;
-    width: 500px;
+    width: $width;
     margin: 0 auto;
     padding: 10px 12px;
     text-align: center;
