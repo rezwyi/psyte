@@ -1,7 +1,4 @@
 class SessionsController < ApplicationController
-  respond_to :html
-  respond_to :js, :only => :new
-
   layout 'login'
 
   def new
@@ -22,6 +19,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path
+    respond_with({}, :location => root_path)
   end
 end
