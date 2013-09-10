@@ -21,6 +21,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'fabrication'
   gem 'shoulda-matchers'
+  gem 'rconsole', '~> 0.1.0'
 end
 
 group :assets do
