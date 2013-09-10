@@ -44,12 +44,11 @@ html{lang='#{I18n.locale}'}
     
     .layout
       .logo
-         = link_to 'Rezvanov<span>.info</span>'.html_safe, root_path
+         = link_to root_path do
+           | Rezvanov<span>.info</span>
 
       .content
-        .about
-          = raw t(:about)
-        
+        .about == t(:about)
         = yield
          
       .footer

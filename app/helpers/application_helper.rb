@@ -10,4 +10,8 @@ module ApplicationHelper
   def render_markdown(markdown)
   	Rails.application.config.md_renderer.render(markdown).html_safe
   end
+
+  def format_project_url(url)
+    url.strip.gsub /\Ahttps?:\/\//, ''
+  end
 end

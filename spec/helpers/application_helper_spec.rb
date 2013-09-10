@@ -18,4 +18,18 @@ describe ApplicationHelper do
       helper.render_markdown('<iframe></iframe>').should be_empty
     end
   end
+
+  describe '#formated_project_url' do
+    it 'should not change url' do
+      helper.format_project_url('test.com').should == 'test.com'
+    end
+
+    it 'should cut http:// in the beginning' do
+      helper.format_project_url('http://test.com').should == 'test.com'
+    end
+
+    it 'should cut http:// in the beginning' do
+      helper.format_project_url('   http://test.com   ').should == 'test.com'
+    end
+  end
 end

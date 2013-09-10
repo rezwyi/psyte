@@ -68,8 +68,7 @@ blockquote {
   a {
     color: #dd4d42;
     &:hover{
-      background-color: #dd4d42;
-      color: #fff;
+      text-decoration: underline;
     }
     &[class*="js"], &[data-remote="true"] {
       border-bottom: 1px dashed;
@@ -79,14 +78,14 @@ blockquote {
     }
   }
   > .logo {
+    position: absolute;
     font-size: 3em;
     font-family: 'Allura', cursive;
-    float: left;
     a {
       color: #dd4d42;
       &:hover{
+        text-decoration: none;
         background-color: #fff;
-        color: #dd4d42;
       }
     }
     span {
