@@ -17,6 +17,10 @@
         margin: 30px auto;
       }
       > h2 {
+        font-size: 1.3em;
+        margin: 30px 0;
+      }
+      > h3 {
         font-size: 1em;
         margin: 30px 0;
       }
@@ -29,7 +33,7 @@
           }
         }
       }
-      > ol {
+      > ol, > ul {
         margin: 10px 0 0 45px;
       }
     }
