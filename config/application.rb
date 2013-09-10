@@ -68,8 +68,7 @@ module Psyte
 
     # Global markdown renderer
     config.md_renderer = Redcarpet::Markdown.new(
-      Redcarpet::Render::HTML.new(:filter_html => true),
-      :autolink => true
+      Redcarpet::Render::HTML.new(:filter_html => true), :autolink => true, :fenced_code_blocks => true
     )
   end
 end
