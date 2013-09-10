@@ -17,6 +17,12 @@ describe ApplicationHelper do
     it 'should filter iframe tag' do
       helper.render_markdown('<iframe></iframe>').should be_empty
     end
+
+    it 'should recognize fenced blocks' do
+      helper.render_markdown("``` ruby\nputs 'Hello from Ruby!'\n```").should eq(
+        %(<pre><code class="ruby">puts &#39;Hello from Ruby!&#39;\n</code></pre>\n)
+      )
+    end
   end
 
   describe '#formated_project_url' do
