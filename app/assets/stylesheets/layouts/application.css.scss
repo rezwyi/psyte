@@ -77,6 +77,14 @@ blockquote {
       }
     }
   }
+  pre {
+    > code {
+      margin: 30px 0 0 0;
+      padding: 30px;
+      border-radius: 10px;
+      overflow-x: scroll;
+    }
+  }
   > .logo {
     position: absolute;
     font-size: 3em;
