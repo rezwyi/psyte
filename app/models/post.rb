@@ -1,6 +1,4 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :published_at, :body
-
   belongs_to :user
 
   validates :title, :published_at, :body, presence: true

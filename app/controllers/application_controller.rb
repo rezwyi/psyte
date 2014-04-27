@@ -1,4 +1,4 @@
 class ApplicationController < ActionController::Base
-  include Shared::Authenticable
-  respond_to :html
+  include Controllers::Authenticable
+  respond_to :html, :js
 end

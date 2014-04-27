@@ -1,6 +1,6 @@
-= form_for [:admin, @post] do |f|
+= form_for [:admin, @resource] do |f|
   legend
-    = @post.new_record? ? t('.new') : t('.edit')
+    = @resource.new_record? ? t('.new') : t('.edit')
   
   fieldset
     .span8

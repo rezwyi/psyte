@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :production_url, :description
+  belongs_to :user
 
   validates :production_url, :description, presence: true
 

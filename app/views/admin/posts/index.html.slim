@@ -10,13 +10,13 @@ table.table
       th = t('.created_at')
       th
   tbody
-    - @posts.each do |p|
+    - @resources.each do |r|
       tr
-        td = p.id
-        td = link_to p.title, post_path(p.id), target: '_blank'
-        td = Russian::strftime p.created_at, '%d %B %Y'
+        td = r.id
+        td = link_to r.title, post_path(r.id), target: '_blank'
+        td = Russian::strftime r.created_at, '%d %B %Y'
         td.actions
-          = link_to t('.edit'), edit_admin_post_path(p.id), class: 'btn'
+          = link_to t('.edit'), edit_admin_post_path(r.id), class: 'btn'
           | &nbsp;
-          = link_to t('.delete'), admin_post_path(p.id), method: :delete,
+          = link_to t('.delete'), admin_post_path(r.id), method: :delete,
                     confirm: I18n.t('messages.really?'), class: 'btn btn-danger'

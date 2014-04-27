@@ -1,4 +1,4 @@
-module Shared
+module Controllers
   module Authenticable
     extend ActiveSupport::Concern
 

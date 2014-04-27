@@ -1,6 +1,6 @@
-= form_for [:admin, @project] do |f|
+= form_for [:admin, @resource] do |f|
   legend
-    = @project.new_record? ? t('.new') : t('.edit')
+    = @resource.new_record? ? t('.new') : t('.edit')
   
   fieldset
     .control-group
