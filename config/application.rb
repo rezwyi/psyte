@@ -11,11 +11,6 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-# Global application settings
-SETTINGS = OpenStruct.new(
-  YAML.load File.read(File.expand_path('../settings.yml', __FILE__))
-)
-
 module Psyte
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
