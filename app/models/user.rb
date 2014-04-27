@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   has_many :posts
+  has_many :projects
 
-  validates :login, :uniqueness => true
+  validates :login, uniqueness: true
 
   def self.authenticate(login, password)
     return unless (user = self.find_by_login(login))

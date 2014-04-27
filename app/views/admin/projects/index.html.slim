@@ -1,4 +1,4 @@
-= link_to t('.new_project'), new_admin_project_path, :class => 'btn btn-success'
+= link_to t('.new_project'), new_admin_project_path, class: 'btn btn-success'
 
 table.table
   thead
@@ -8,13 +8,13 @@ table.table
       th = t('.created_at')
       th
   tbody
-    - @projects.each do |p|
+    - @resources.each do |r|
       tr
-        td = p.id
-        td = p.production_url
-        td = Russian::strftime p.created_at, '%d %B %Y'
+        td = r.id
+        td = r.production_url
+        td = Russian::strftime r.created_at, '%d %B %Y'
         td.actions
-          = link_to t('.edit'), edit_admin_project_path(p.id), :class => 'btn'
+          = link_to t('.edit'), edit_admin_project_path(r.id), class: 'btn'
           | &nbsp;
-          = link_to t('.delete'), admin_project_path(p.id), :method => :delete,
-                    :confirm => I18n.t('messages.really?'), :class => 'btn btn-danger'
+          = link_to t('.delete'), admin_project_path(r.id), method: :delete,
+                    confirm: I18n.t('messages.really?'), class: 'btn btn-danger'

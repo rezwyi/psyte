@@ -8,60 +8,49 @@ describe SessionsController do
       get :new
       response.should be_success
     end
-    
-    it 'should render new template' do
-      get :new
-      response.should render_template(:new)
-    end
   end
 
   describe '#create' do
-    before { User.stub(:authenticate).and_return(user) }
+    before { user }
     
-    let(:params) do
-      {:login => 'jryan', :password => '123456'}
-    end
-
-    it 'should redirect to root' do
-      post :create, params
-      response.should redirect_to(admin_posts_path)
-    end
+    let(:params) { {login: 'jryan', password: '123456'} }
 
     it 'should show flash notice' do
       post :create, params
-      flash[:notice].should == I18n.t('messages.welcome')
+      expect(flash[:notice]).to eql(I18n.t('messages.welcome'))
     end
 
     it 'should store user id to session' do
       post :create, params
-      session[:user_id].should == user.id
+      expect(session[:user_id]).to eql(user.id)
+    end
+
+    it 'should redirect to admin root' do
+      post :create, params
+      response.should redirect_to(admin_posts_path)
     end
     
     context 'with invalid params' do
-      before { User.stub(:authenticate).and_return(nil) }
-      
-      it 'should show flash alert' do
-        post :create, params
-        flash[:alert].should == I18n.t('messages.wrong_login_or_password')
-      end
-
-      it 'should render new template again' do
-        post :create, params
-        response.should render_template(:new)
-      end
+      before { User.stub(:authenticate).and_return(false) }
 
       it 'should not store user id to session' do
         post :create, params
-        session[:user_id].should be_nil
+        expect(session[:user_id]).to be_nil
+      end
+
+      it 'should show flash alert' do
+        post :create, params
+        expect(flash[:alert]).to eql(I18n.t('messages.wrong_login_or_password'))
       end
     end
   end
 
   describe '#destroy' do
+    before { session[:user_id] = user.id }
+    
     it 'should destroy session id' do
-      session[:user_id] = user.id
       delete :destroy
-      session[:user_id].should be_nil
+      expect(session[:user_id]).to be_nil
     end
     
     it 'should redirect to root' do

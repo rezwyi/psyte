@@ -9,11 +9,11 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610182819) do
+ActiveRecord::Schema.define(version: 20140427192601) do
 
-  create_table "posts", :force => true do |t|
+  create_table "posts", force: true do |t|
     t.integer  "user_id"
     t.string   "title"
     t.text     "body"
@@ -22,26 +22,14 @@ ActiveRecord::Schema.define(:version => 20130610182819) do
     t.datetime "updated_at"
   end
 
-  create_table "projects", :force => true do |t|
+  create_table "projects", force: true do |t|
     t.string   "production_url"
-    t.text     "description",    :null => false
+    t.text     "description",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "slugs", :force => true do |t|
-    t.string   "name"
-    t.integer  "sluggable_id"
-    t.integer  "sequence",                     :default => 1, :null => false
-    t.string   "sluggable_type", :limit => 40
-    t.string   "scope"
-    t.datetime "created_at"
-  end
-
-  add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
-  add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
-
-  create_table "users", :force => true do |t|
+  create_table "users", force: true do |t|
     t.string   "login"
     t.string   "name"
     t.string   "password_hash"
