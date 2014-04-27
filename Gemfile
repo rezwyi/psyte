@@ -25,8 +25,8 @@ gem 'bootstrap-sass', '~> 2.3.2.0'
 
 group :development, :test do
   gem 'fabrication'
-  gem 'shoulda-matchers'
   gem 'rspec-rails', '~> 2.14.0'
+  gem 'shoulda-matchers', '~> 2.5.0', require: false
 end
 
 group :development do
