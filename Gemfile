@@ -14,7 +14,7 @@ gem 'coffee-rails'
 gem 'slim-rails'
 
 gem 'russian'
-gem 'friendly_id'
+gem 'babosa'
 gem 'kaminari'
 gem 'yaml_db'
 gem 'redcarpet'

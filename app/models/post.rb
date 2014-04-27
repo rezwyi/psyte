@@ -3,8 +3,6 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
 
-  has_friendly_id :ascii_title, use_slug: true
-
   validates :title, :published_at, :body, presence: true
   validates :title, uniqueness: true
 
@@ -13,13 +11,7 @@ class Post < ActiveRecord::Base
     where('published_at <= ?', Time.now.utc).order('created_at desc')
   end
 
-  protected
-
-  def ascii_title
-    arr = []
-    self.title.split(' ').each do |word|
-      arr << Russian::translit(word.downcase)
-    end
-    arr.join('-')
+  def to_param
+    "#{self.id}-#{self.title.to_slug.normalize(transliterations: [:russian, :latin]).to_s}"
   end
 end
