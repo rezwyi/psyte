@@ -14,14 +14,14 @@ describe 'Admin post routes' do
   end
 
   it 'should routes to #edit' do
-    get('/admin/posts/1/edit').should route_to('admin/posts#edit', :id => '1')
+    get('/admin/posts/1/edit').should route_to('admin/posts#edit', id: '1')
   end
 
   it 'should routes to #update' do
-    put('/admin/posts/1').should route_to('admin/posts#update', :id => '1')
+    put('/admin/posts/1').should route_to('admin/posts#update', id: '1')
   end
 
   it 'should routes to #destroy' do
-    delete('/admin/posts/1').should route_to('admin/posts#destroy', :id => '1')
+    delete('/admin/posts/1').should route_to('admin/posts#destroy', id: '1')
   end
 end

@@ -18,9 +18,7 @@ describe SessionsController do
   describe '#create' do
     before { User.stub(:authenticate).and_return(user) }
     
-    let(:params) do
-      {:login => 'jryan', :password => '123456'}
-    end
+    let(:params) { {login: 'jryan', password: '123456'} }
 
     it 'should redirect to root' do
       post :create, params

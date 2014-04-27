@@ -31,9 +31,7 @@ describe Admin::ProjectsController do
   end
 
   describe '#create' do
-    let(:params) do
-      {:project => {:production_url => 'http://test.com', :description => 'd'}}
-    end
+    let(:params) { {project: {production_url: 'http://test.com', description: 'd'}} }
     
     it 'should redirect to projects' do
       post :create, params
@@ -67,29 +65,29 @@ describe Admin::ProjectsController do
 
   describe '#edit' do
     it 'should response with 200' do
-      get :edit, :id => project.id
+      get :edit, id: project.id
       response.should be_success
     end
 
     it 'should render new template' do
-      get :edit, :id => project.id
+      get :edit, id: project.id
       response.should render_template(:edit)
     end
   end
 
   describe '#update' do
     it 'should redirect to projects' do
-      put :update, :id => project.id, :project => {:description => 'New description'}
+      put :update, id: project.id, project: {description: 'New description'}
       response.should redirect_to(admin_projects_path)
     end
 
     it 'should udpate project' do
-      put :update, :id => project.id, :project => {:description => 'New description'}
+      put :update, id: project.id, project: {description: 'New description'}
       project.reload.description.should == 'New description'
     end
 
     it 'should show flash notice' do
-      put :update, :id => project.id, :project => {:description => 'New description'}
+      put :update, id: project.id, project: {description: 'New description'}
       flash[:notice].should == I18n.t('messages.project_updated')
     end
 
@@ -97,7 +95,7 @@ describe Admin::ProjectsController do
       before { Project.any_instance.stub(:save).and_return(false) }
       
       it 'should render new template' do
-        put :update, :id => project.id, :project => {:description => 'New description'}
+        put :update, id: project.id, project: {description: 'New description'}
         response.should render_template(:edit)
       end
     end
@@ -108,17 +106,17 @@ describe Admin::ProjectsController do
     
     it 'should delete project' do
       expect {
-        delete(:destroy, :id => project.id)
+        delete(:destroy, id: project.id)
       }.to change(Project, :count).by(-1)
     end
 
     it 'should redirect to projects' do
-      delete :destroy, :id => project.id
+      delete :destroy, id: project.id
       response.should redirect_to(admin_projects_path)
     end
 
     it 'should show flash notice' do
-      delete :destroy, :id => project.id
+      delete :destroy, id: project.id
       flash[:notice].should == I18n.t('messages.project_deleted')
     end
   end

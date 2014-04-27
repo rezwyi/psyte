@@ -1,11 +1,11 @@
-= form_for '', :url => sessions_path, :html => {:class => 'login-form'} do |f|
+= form_for '', url: sessions_path, html: {class: 'login-form'} do |f|
   .control-group
     = f.label :login, t('.login')
-    = f.text_field :login, :value => params[:login], :autofocus => true
+    = f.text_field :login, value: params[:login], autofocus: true
   
   .control-group
     = f.label :password, t('.password')
     = f.password_field :password
 
   .actions
-    = f.submit t('.sign_in'), :class => 'button'
+    = f.submit t('.sign_in'), class: 'button'

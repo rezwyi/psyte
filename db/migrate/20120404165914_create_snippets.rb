@@ -7,7 +7,7 @@ class CreateSnippets < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :snippets, :name, :unique => true
+    add_index :snippets, :name, unique: true
   end
 
   def self.down

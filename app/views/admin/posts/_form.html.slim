@@ -5,21 +5,21 @@
   fieldset
     .span8
       .control-group
-        = f.label :title, :class => 'control-label'
+        = f.label :title, class: 'control-label'
         .controls
-          = f.text_field :title, :class => 'span12'
+          = f.text_field :title, class: 'span12'
     .span4
       .control-group
-        = f.label :published_at, :class => 'control-label'
+        = f.label :published_at, class: 'control-label'
         .controls
-          = f.text_field :published_at, :class => 'span12'
+          = f.text_field :published_at, class: 'span12'
 
   fieldset
     .control-group
-      = f.label :body, :class => 'control-label'
+      = f.label :body, class: 'control-label'
       .controls
-        = f.text_area :body, :class => 'span12', :rows => 15
+        = f.text_area :body, class: 'span12', rows: 15
   
   .form-actions
-    = f.submit t('.save'), :class => 'btn'
+    = f.submit t('.save'), class: 'btn'
     = link_to t('.cancel'), :back

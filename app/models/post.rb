@@ -3,10 +3,10 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
 
-  has_friendly_id :ascii_title, :use_slug => true
+  has_friendly_id :ascii_title, use_slug: true
 
-  validates :title, :published_at, :body, :presence => true
-  validates :title, :uniqueness => true
+  validates :title, :published_at, :body, presence: true
+  validates :title, uniqueness: true
 
   scope :managed, -> { order('id desc') }
   scope :recent, -> do
