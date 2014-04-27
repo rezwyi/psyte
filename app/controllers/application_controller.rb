@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-	include Authenticable
-  protect_from_forgery
-  respond_to :html, :js
+  include Shared::Authenticable
+  respond_to :html
 end
