@@ -31,10 +31,9 @@ group :development, :test do
 end
 
 group :development do
-	gem 'quiet_assets'
-  gem 'capistrano-ext'
-  gem 'capistrano_colors'
-  gem 'capistrano', '~> 2.15.0'
+  gem 'quiet_assets'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
   gem 'rconsole', '~> 0.1.0'
 end
 

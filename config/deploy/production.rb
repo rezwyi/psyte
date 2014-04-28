@@ -1,0 +1,1 @@
+server 'hydrogen.locum.ru', user: fetch(:user), roles: %w(app)
