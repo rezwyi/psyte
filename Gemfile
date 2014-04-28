@@ -18,6 +18,7 @@ gem 'babosa'
 gem 'kaminari'
 gem 'yaml_db'
 gem 'redcarpet'
+gem 'elasticonf'
 gem 'bcrypt-ruby', require: 'bcrypt'
 
 gem 'flight-for-rails'
