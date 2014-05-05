@@ -60,7 +60,7 @@ GEM
       hashie (~> 2.1.0)
     erubis (2.7.0)
     execjs (2.0.2)
-    fabrication (2.11.1)
+    fabrication (2.11.2)
     flight-for-rails (1.1.4)
       jquery-rails (>= 2.1.4)
       rails (>= 3.1.0)
@@ -83,9 +83,9 @@ GEM
     minitest (5.3.3)
     multi_json (1.9.3)
     mysql2 (0.3.15)
-    net-scp (1.2.0)
+    net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (2.8.0)
+    net-ssh (2.9.0)
     polyglot (0.3.4)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
@@ -177,7 +177,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    unicorn-rails (2.0.0)
+    unicorn-rails (2.1.1)
       rack
       unicorn
     yaml_db (0.2.3)
