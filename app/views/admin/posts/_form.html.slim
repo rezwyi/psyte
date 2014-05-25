@@ -18,7 +18,8 @@
     .control-group
       = f.label :body, class: 'control-label'
       .controls
-        = f.text_area :body, class: 'span12', rows: 15
+        #epiceditor
+        = f.text_area :body, class: 'span12', rows: 15, id: 'epiceditora'
   
   .form-actions
     = f.submit t('.save'), class: 'btn'
