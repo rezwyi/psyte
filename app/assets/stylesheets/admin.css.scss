@@ -1,14 +1,7 @@
 /*
+ *= require bootstrap-sass
  *= require components/flash
  */
-
-@import "bootstrap";
-
-#epiceditor {
-  + #epiceditora {
-    display: none;
-  }
-}
 
 .layout {
   .navbar-inner {

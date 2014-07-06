@@ -1,5 +1,6 @@
 GEM
   remote: http://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.1.1)
       actionpack (= 4.1.1)
@@ -32,8 +33,6 @@ GEM
     bcrypt (3.1.7)
     bcrypt-ruby (3.1.5)
       bcrypt (>= 3.1.3)
-    bootstrap-sass (2.3.2.2)
-      sass (~> 3.2)
     builder (3.2.2)
     capistrano (3.2.1)
       i18n
@@ -102,6 +101,9 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.1)
       sprockets-rails (~> 2.0)
+    rails-assets-bootstrap-sass (3.0.2)
+      rails-assets-jquery (>= 1.9.0)
+    rails-assets-jquery (2.1.1)
     railties (4.1.1)
       actionpack (= 4.1.1)
       activesupport (= 4.1.1)
@@ -188,7 +190,6 @@ PLATFORMS
 DEPENDENCIES
   babosa
   bcrypt-ruby
-  bootstrap-sass (~> 2.3.2.0)
   capistrano-rails
   capistrano-rvm
   coffee-rails
@@ -200,6 +201,7 @@ DEPENDENCIES
   mysql2
   quiet_assets
   rails (~> 4.1.0)
+  rails-assets-bootstrap-sass
   rake
   rconsole (~> 0.1.0)
   redcarpet
